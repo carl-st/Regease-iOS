@@ -16,6 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+#if LOCAL
+        injectIP()
+#endif
+        
+        let _ = PersistenceManager.sharedInstance
+        
+        // Initial VC
+        let storyboard = UIStoryboard(name: StoryboardNames.Login.rawValue, bundle: nil)
+        let me = PersistenceManager.sharedInstance.user()
+        if me == nil {
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: NavigationControllerStoryboardIdentifier.LoginNavigationController.rawValue)
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        } else {
+//            AuthServices.sharedInstance.me { _, _ in }
+        }
+        
         return true
     }
 
@@ -41,6 +58,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+#if LOCAL
+
+    func injectIP() -> Void {
+        let filePath = NSBundle.mainBundle().pathForResource("local", ofType: "ip")
+        let data = NSData(contentsOfFile: filePath!)
+        let stringData = NSString(data: data!, encoding: NSUTF8StringEncoding)
+        GlobalConstants.Urls.baseUrl = (stringData?.description)!
+        debugPrint("Hitting API on \(GlobalConstants.Urls.baseUrl)")
+
+    }
+
+#endif
 
 }
 

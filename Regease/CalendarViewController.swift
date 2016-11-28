@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  CalendarViewController.swift
 //  Regease
 //
 //  Created by Karol Stępień on 27.11.2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class CalendarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

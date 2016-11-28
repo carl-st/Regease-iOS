@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  DashboardViewController.swift
 //  Regease
 //
 //  Created by Karol Stępień on 27.11.2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

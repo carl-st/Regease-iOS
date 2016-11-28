@@ -5,6 +5,9 @@
       location = "group:Regease.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:local.ip">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

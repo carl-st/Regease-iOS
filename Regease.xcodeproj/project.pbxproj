@@ -10,9 +10,23 @@
 		906B7A2E778ACEDE371E48B7 /* Pods_RegeaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10A6CD72FA053A996974DF1 /* Pods_RegeaseTests.framework */; };
 		CC2D5FD2E254D8C74D007EB7 /* Pods_RegeaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C99A8AA75731F298EFC8DCC /* Pods_RegeaseUITests.framework */; };
 		DFB94427399ACCD398DCBB38 /* Pods_Regease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F2099F6C7A666E6278953 /* Pods_Regease.framework */; };
+		F96DB4C61DECD8EE00E1CE38 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DB4C51DECD8ED00E1CE38 /* AuthService.swift */; };
+		F96DB4C81DECD98800E1CE38 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DB4C71DECD98800E1CE38 /* DashboardViewModel.swift */; };
+		F96DB4CA1DECD9BD00E1CE38 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DB4C91DECD9BD00E1CE38 /* CalendarViewModel.swift */; };
+		F96DB4CE1DECDE8700E1CE38 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DB4CD1DECDE8700E1CE38 /* LoginViewController.swift */; };
+		F9745F101DEC350D00F2F7A7 /* Regease+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F0F1DEC350D00F2F7A7 /* Regease+UIColor.swift */; };
+		F9745F121DEC378600F2F7A7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9745F111DEC378600F2F7A7 /* Login.storyboard */; };
+		F9745F141DEC5B5400F2F7A7 /* BarIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9745F131DEC5B5400F2F7A7 /* BarIcons.xcassets */; };
+		F9745F161DEC8A1200F2F7A7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F151DEC8A1200F2F7A7 /* Service.swift */; };
+		F9745F191DEC8AC900F2F7A7 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F181DEC8AC900F2F7A7 /* PersistenceManager.swift */; };
+		F9745F1B1DEC8DCA00F2F7A7 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F1A1DEC8DCA00F2F7A7 /* AccessToken.swift */; };
+		F9745F1D1DEC958A00F2F7A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F1C1DEC958A00F2F7A7 /* User.swift */; };
+		F9745F1F1DECCD4300F2F7A7 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F1E1DECCD4300F2F7A7 /* GlobalConstants.swift */; };
+		F9745F221DECD33C00F2F7A7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F211DECD33C00F2F7A7 /* SettingsTableViewController.swift */; };
+		F9745F241DECD73100F2F7A7 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F231DECD73100F2F7A7 /* UIConstants.swift */; };
 		F9D534581DEB355E009064A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D534571DEB355E009064A1 /* AppDelegate.swift */; };
-		F9D5345A1DEB355E009064A1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D534591DEB355E009064A1 /* FirstViewController.swift */; };
-		F9D5345C1DEB355E009064A1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5345B1DEB355E009064A1 /* SecondViewController.swift */; };
+		F9D5345A1DEB355E009064A1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D534591DEB355E009064A1 /* DashboardViewController.swift */; };
+		F9D5345C1DEB355E009064A1 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5345B1DEB355E009064A1 /* CalendarViewController.swift */; };
 		F9D5345F1DEB355E009064A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D5345D1DEB355E009064A1 /* Main.storyboard */; };
 		F9D534611DEB355E009064A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D534601DEB355E009064A1 /* Assets.xcassets */; };
 		F9D534641DEB355E009064A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D534621DEB355E009064A1 /* LaunchScreen.storyboard */; };
@@ -47,10 +61,24 @@
 		D7C98F94A90B595ADEA06606 /* Pods-Regease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Regease.release.xcconfig"; path = "Pods/Target Support Files/Pods-Regease/Pods-Regease.release.xcconfig"; sourceTree = "<group>"; };
 		DC70044ABB6800D0E3AC1EB4 /* Pods-Regease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Regease.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Regease/Pods-Regease.debug.xcconfig"; sourceTree = "<group>"; };
 		F11F2099F6C7A666E6278953 /* Pods_Regease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Regease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F96DB4C51DECD8ED00E1CE38 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = Services/AuthService.swift; sourceTree = "<group>"; };
+		F96DB4C71DECD98800E1CE38 /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewModel.swift; path = ViewModels/DashboardViewModel.swift; sourceTree = "<group>"; };
+		F96DB4C91DECD9BD00E1CE38 /* CalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewModel.swift; path = ViewModels/CalendarViewModel.swift; sourceTree = "<group>"; };
+		F96DB4CD1DECDE8700E1CE38 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewControllers/LoginViewController.swift; sourceTree = "<group>"; };
+		F9745F0F1DEC350D00F2F7A7 /* Regease+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Regease+UIColor.swift"; path = "Other/Regease+UIColor.swift"; sourceTree = "<group>"; };
+		F9745F111DEC378600F2F7A7 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		F9745F131DEC5B5400F2F7A7 /* BarIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BarIcons.xcassets; sourceTree = "<group>"; };
+		F9745F151DEC8A1200F2F7A7 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Other/Service.swift; sourceTree = "<group>"; };
+		F9745F181DEC8AC900F2F7A7 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistenceManager.swift; path = Managers/PersistenceManager.swift; sourceTree = "<group>"; };
+		F9745F1A1DEC8DCA00F2F7A7 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessToken.swift; path = Model/AccessToken.swift; sourceTree = "<group>"; };
+		F9745F1C1DEC958A00F2F7A7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
+		F9745F1E1DECCD4300F2F7A7 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalConstants.swift; path = Other/GlobalConstants.swift; sourceTree = "<group>"; };
+		F9745F211DECD33C00F2F7A7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = ViewControllers/SettingsTableViewController.swift; sourceTree = "<group>"; };
+		F9745F231DECD73100F2F7A7 /* UIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIConstants.swift; path = Other/UIConstants.swift; sourceTree = "<group>"; };
 		F9D534541DEB355E009064A1 /* Regease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Regease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D534571DEB355E009064A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F9D534591DEB355E009064A1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		F9D5345B1DEB355E009064A1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F9D534591DEB355E009064A1 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		F9D5345B1DEB355E009064A1 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		F9D5345E1DEB355E009064A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9D534601DEB355E009064A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9D534631DEB355E009064A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -114,6 +142,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F96DB4CB1DECDE6200E1CE38 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F96DB4CD1DECDE8700E1CE38 /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		F96DB4CC1DECDE6700E1CE38 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F9D534591DEB355E009064A1 /* DashboardViewController.swift */,
+				F9D5345B1DEB355E009064A1 /* CalendarViewController.swift */,
+				F9745F211DECD33C00F2F7A7 /* SettingsTableViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		F9745F0E1DEC34DC00F2F7A7 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F9745F0F1DEC350D00F2F7A7 /* Regease+UIColor.swift */,
+				F9745F1E1DECCD4300F2F7A7 /* GlobalConstants.swift */,
+				F9745F231DECD73100F2F7A7 /* UIConstants.swift */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		F9745F171DEC8A9C00F2F7A7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F9745F181DEC8AC900F2F7A7 /* PersistenceManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		F9D5344B1DEB355E009064A1 = {
 			isa = PBXGroup;
 			children = (
@@ -141,11 +205,13 @@
 			children = (
 				F9D534571DEB355E009064A1 /* AppDelegate.swift */,
 				F9D534C51DEB4281009064A1 /* Assets */,
+				F9745F171DEC8A9C00F2F7A7 /* Managers */,
 				F9D534C71DEB42A5009064A1 /* Model */,
 				F9D534C81DEB42C3009064A1 /* Services */,
 				F9D534C41DEB4273009064A1 /* Storyboards */,
 				F9D534C31DEB425A009064A1 /* ViewControllers */,
 				F9D534C61DEB4294009064A1 /* ViewModels */,
+				F9745F0E1DEC34DC00F2F7A7 /* Other */,
 				F9D534651DEB355E009064A1 /* Info.plist */,
 			);
 			path = Regease;
@@ -172,8 +238,8 @@
 		F9D534C31DEB425A009064A1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F9D534591DEB355E009064A1 /* FirstViewController.swift */,
-				F9D5345B1DEB355E009064A1 /* SecondViewController.swift */,
+				F96DB4CB1DECDE6200E1CE38 /* Login */,
+				F96DB4CC1DECDE6700E1CE38 /* Home */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -183,6 +249,7 @@
 			children = (
 				F9D534621DEB355E009064A1 /* LaunchScreen.storyboard */,
 				F9D5345D1DEB355E009064A1 /* Main.storyboard */,
+				F9745F111DEC378600F2F7A7 /* Login.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -191,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				F9D534601DEB355E009064A1 /* Assets.xcassets */,
+				F9745F131DEC5B5400F2F7A7 /* BarIcons.xcassets */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -198,6 +266,8 @@
 		F9D534C61DEB4294009064A1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F96DB4C71DECD98800E1CE38 /* DashboardViewModel.swift */,
+				F96DB4C91DECD9BD00E1CE38 /* CalendarViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -205,6 +275,8 @@
 		F9D534C71DEB42A5009064A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F9745F1A1DEC8DCA00F2F7A7 /* AccessToken.swift */,
+				F9745F1C1DEC958A00F2F7A7 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -212,6 +284,8 @@
 		F9D534C81DEB42C3009064A1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F9745F151DEC8A1200F2F7A7 /* Service.swift */,
+				F96DB4C51DECD8ED00E1CE38 /* AuthService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -229,6 +303,7 @@
 				F9D534521DEB355E009064A1 /* Resources */,
 				F5B47CEF62A75D20271118A7 /* [CP] Embed Pods Frameworks */,
 				397147C1EFE312A84633F0FD /* [CP] Copy Pods Resources */,
+				F9745F201DECCDE300F2F7A7 /* Inject Local IP */,
 			);
 			buildRules = (
 			);
@@ -293,17 +368,20 @@
 					F9D534531DEB355E009064A1 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = K93H863522;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					F9D534691DEB355E009064A1 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = K93H863522;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F9D534531DEB355E009064A1;
 					};
 					F9D534741DEB355E009064A1 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = K93H863522;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F9D534531DEB355E009064A1;
 					};
@@ -334,6 +412,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9745F121DEC378600F2F7A7 /* Login.storyboard in Resources */,
+				F9745F141DEC5B5400F2F7A7 /* BarIcons.xcassets in Resources */,
 				F9D534641DEB355E009064A1 /* LaunchScreen.storyboard in Resources */,
 				F9D534611DEB355E009064A1 /* Assets.xcassets in Resources */,
 				F9D5345F1DEB355E009064A1 /* Main.storyboard in Resources */,
@@ -447,6 +527,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Regease/Pods-Regease-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F9745F201DECCDE300F2F7A7 /* Inject Local IP */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Inject Local IP";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "Echo \"Setting up local.ip file\"\neval \"${GCC_PREPROCESSOR_DEFINITIONS}\"\n\nif [ ${LOCAL} ] ; then\nIP_ADDRESS=\"$(ipconfig getifaddr en0)\"\necho \"Setting $IP_ADDRESS in local.ip\"\necho -n \"http://$IP_ADDRESS:8080/\" > local.ip\nelse\necho \"Local scheme not selected.. skipping.\"\nfi";
+		};
 		FA65A8923A6F5B4387AADC99 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -484,9 +578,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9D5345C1DEB355E009064A1 /* SecondViewController.swift in Sources */,
+				F9745F1B1DEC8DCA00F2F7A7 /* AccessToken.swift in Sources */,
+				F9745F1F1DECCD4300F2F7A7 /* GlobalConstants.swift in Sources */,
+				F9745F101DEC350D00F2F7A7 /* Regease+UIColor.swift in Sources */,
+				F96DB4CE1DECDE8700E1CE38 /* LoginViewController.swift in Sources */,
+				F96DB4C61DECD8EE00E1CE38 /* AuthService.swift in Sources */,
+				F9D5345C1DEB355E009064A1 /* CalendarViewController.swift in Sources */,
+				F9745F161DEC8A1200F2F7A7 /* Service.swift in Sources */,
+				F96DB4CA1DECD9BD00E1CE38 /* CalendarViewModel.swift in Sources */,
+				F9745F1D1DEC958A00F2F7A7 /* User.swift in Sources */,
+				F9745F221DECD33C00F2F7A7 /* SettingsTableViewController.swift in Sources */,
+				F9745F191DEC8AC900F2F7A7 /* PersistenceManager.swift in Sources */,
+				F9745F241DECD73100F2F7A7 /* UIConstants.swift in Sources */,
+				F96DB4C81DECD98800E1CE38 /* DashboardViewModel.swift in Sources */,
 				F9D534581DEB355E009064A1 /* AppDelegate.swift in Sources */,
-				F9D5345A1DEB355E009064A1 /* FirstViewController.swift in Sources */,
+				F9D5345A1DEB355E009064A1 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +665,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -609,6 +716,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -638,6 +746,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC70044ABB6800D0E3AC1EB4 /* Pods-Regease.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K93H863522;
 				INFOPLIST_FILE = Regease/Info.plist;
@@ -653,6 +762,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D7C98F94A90B595ADEA06606 /* Pods-Regease.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K93H863522;
 				INFOPLIST_FILE = Regease/Info.plist;
