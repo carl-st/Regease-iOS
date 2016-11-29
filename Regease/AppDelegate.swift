@@ -15,11 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-#if LOCAL
+        // Ovvaride point for customization after application launch.
+//#if LOCAL
         injectIP()
-#endif
-        
+//#endif
+    
         let _ = PersistenceManager.sharedInstance
         
         // Initial VC
@@ -58,18 +58,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-#if LOCAL
+//#if LOCAL
 
     func injectIP() -> Void {
-        let filePath = NSBundle.mainBundle().pathForResource("local", ofType: "ip")
+        let filePath = Bundle.main.path(forResource: "local", ofType: "ip")
         let data = NSData(contentsOfFile: filePath!)
-        let stringData = NSString(data: data!, encoding: NSUTF8StringEncoding)
-        GlobalConstants.Urls.baseUrl = (stringData?.description)!
-        debugPrint("Hitting API on \(GlobalConstants.Urls.baseUrl)")
+        let stringData = NSString(data: data! as Data, encoding: String.Encoding.utf8.rawValue)
+        Urls.baseUrl = (stringData?.description)!
+        debugPrint("Hitting API on \(Urls.baseUrl)")
 
     }
 
-#endif
+//#endif
 
 }
 

@@ -18,6 +18,7 @@ target 'Regease' do
   pod 'RxRealm'
   pod 'RxAlamofire'
   pod 'JTAppleCalendar', '~> 6.0'
+  pod 'Material', '~> 2.0'
 
   target 'RegeaseTests' do
     inherit! :search_paths

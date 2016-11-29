@@ -1,5 +1,5 @@
 //
-//  AccessToken.swift
+//  Token.swift
 //  Regease
 //
 //  Created by Karol Stępień on 28.11.2016.
@@ -9,9 +9,10 @@
 import RealmSwift
 import ObjectMapper
 
-class AccessToken: Object, Mappable {
+class Token: Object, Mappable {
     dynamic var id = 0
     dynamic var accessToken = ""
+    dynamic var refreshToken = ""
     
     override static func primaryKey() -> String? {
         return "id"
@@ -23,6 +24,7 @@ class AccessToken: Object, Mappable {
     
     func mapping(map: Map) {
         accessToken <- map["access_token"]
+        refreshToken <- map["refresh_token"]
     }
     
 }

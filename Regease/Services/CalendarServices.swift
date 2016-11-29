@@ -1,8 +1,8 @@
 //
-//  AuthService.swift
+//  CalendarServices.swift
 //  Regease
 //
-//  Created by Karol Stępień on 28.11.2016.
+//  Created by Karol Stępień on 29.11.2016.
 //  Copyright © 2016 Regease. All rights reserved.
 //
 
@@ -11,16 +11,15 @@ import RealmSwift
 import AlamofireObjectMapper
 import ObjectMapper
 
-class AuthServices: Service {
+class CalendarServices: Service {
     
-    static let sharedInstance = AuthServices()
-
+    static let sharedInstance = CalendarServices()
+    
     override init() {}
     
     enum Path: String {
-        case Login = "login"
+        case Appointment = "appointment"
     }
-    
     
     
 }

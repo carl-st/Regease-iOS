@@ -14,7 +14,7 @@ struct Urls {
     #elseif PRODUCTION
     static var baseUrl = "http://injected:8080/api/" // TODO: Set proper AWS IPs
     #else
-    static let baseUrl = "http://injected:8080/api/"
+    static var baseUrl = "http://injected:8080/api/"
     #endif
     
 }

@@ -20,21 +20,23 @@ class SettingsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 3
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    // MARK: - Table view data source
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if section == 2 {
+            let footer = view as! UITableViewHeaderFooterView
+//            footer.textLabel!.textColor = Colors.sratchBlue
+//            footer.textLabel!.font = UIFont(name: "Aller", size: 14)!
+            footer.textLabel!.frame = footer.frame
+            footer.textLabel!.textAlignment = NSTextAlignment.left
+            let displayName = Bundle.main.infoDictionary!["CFBundleName"] as! String
+            let build = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
+            let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+            footer.textLabel!.text = "\(displayName) v\(version) (\(build))"
+        }
     }
 
     /*

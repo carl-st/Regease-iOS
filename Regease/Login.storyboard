@@ -8,6 +8,17 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="F4v-pB-ciG">
@@ -18,11 +29,136 @@
                         <viewControllerLayoutGuide type="bottom" id="Ojj-lw-GCR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LVR-ND-ZxR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="hGv-nh-qJE">
+                                <rect key="frame" x="124" y="20" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="vuR-mS-awa"/>
+                                    <constraint firstAttribute="width" constant="128" id="xVJ-kN-go6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOx-4K-O4N">
+                                <rect key="frame" x="124" y="168" width="128" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="CfF-dK-Gwl"/>
+                                    <constraint firstAttribute="height" constant="24" id="JGu-P3-x3x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xYS-YV-6g0" customClass="TextField" customModule="Material">
+                                <rect key="frame" x="30" y="262" width="315" height="30"/>
+                                <color key="tintColor" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="315" id="5sE-gK-Sc9"/>
+                                    <constraint firstAttribute="height" constant="30" id="R8B-o4-rYr"/>
+                                    <constraint firstAttribute="width" constant="65.5" id="dkS-jo-CMj">
+                                        <variation key="widthClass=regular" constant="280"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dkS-jo-CMj"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="dkS-jo-CMj"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0XE-Gp-r3G" customClass="TextField" customModule="Material">
+                                <rect key="frame" x="30" y="212" width="315" height="30"/>
+                                <color key="tintColor" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="jWC-oE-tOS">
+                                        <variation key="widthClass=regular" constant="280"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="30" id="o5e-bC-N7k"/>
+                                    <constraint firstAttribute="width" constant="315" id="smJ-LO-ZaR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Username or Email"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jWC-oE-tOS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="jWC-oE-tOS"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LS-xP-vZp" customClass="RaisedButton" customModule="Material">
+                                <rect key="frame" x="133" y="312" width="109" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="0dR-GC-THm"/>
+                                    <constraint firstAttribute="width" constant="109" id="RgK-Cy-Xjf"/>
+                                    <constraint firstAttribute="width" constant="280" id="jPA-eV-e6P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" backgroundImage="YellowButton"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Log in"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jPA-eV-e6P"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="jPA-eV-e6P"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="loginAction:" destination="Dfp-EN-jFt" eventType="touchUpInside" id="wUz-vc-iBe"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hGv-nh-qJE" firstAttribute="centerX" secondItem="LVR-ND-ZxR" secondAttribute="centerX" id="ATa-Xl-MJS"/>
+                            <constraint firstItem="fOx-4K-O4N" firstAttribute="centerX" secondItem="LVR-ND-ZxR" secondAttribute="centerX" id="IXg-jE-t3Y"/>
+                            <constraint firstItem="0XE-Gp-r3G" firstAttribute="centerX" secondItem="LVR-ND-ZxR" secondAttribute="centerX" id="P1D-5O-to3"/>
+                            <constraint firstItem="xYS-YV-6g0" firstAttribute="top" secondItem="0XE-Gp-r3G" secondAttribute="bottom" constant="20" id="RvC-Lv-quj"/>
+                            <constraint firstItem="hGv-nh-qJE" firstAttribute="top" secondItem="XfG-6G-tg9" secondAttribute="bottom" constant="20" id="cKk-6n-h2n"/>
+                            <constraint firstItem="8LS-xP-vZp" firstAttribute="top" secondItem="xYS-YV-6g0" secondAttribute="bottom" constant="20" id="gMJ-yU-kw3"/>
+                            <constraint firstItem="0XE-Gp-r3G" firstAttribute="top" secondItem="fOx-4K-O4N" secondAttribute="bottom" constant="20" id="svc-G8-LhD"/>
+                            <constraint firstItem="8LS-xP-vZp" firstAttribute="centerX" secondItem="LVR-ND-ZxR" secondAttribute="centerX" id="tL5-uF-0TM"/>
+                            <constraint firstItem="fOx-4K-O4N" firstAttribute="top" secondItem="hGv-nh-qJE" secondAttribute="bottom" constant="20" id="tUG-bz-riQ"/>
+                            <constraint firstItem="xYS-YV-6g0" firstAttribute="centerX" secondItem="LVR-ND-ZxR" secondAttribute="centerX" id="zCl-Z3-aRn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Pn-Id-zjH"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="xYS-YV-6g0" id="miq-2b-chG"/>
+                        <outlet property="usernameTextField" destination="0XE-Gp-r3G" id="D9p-W4-5lI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TtC-AK-BDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -33,7 +169,7 @@
             <objects>
                 <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="i5e-y9-eNv" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Ul-aq-Gf7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="8Ul-aq-Gf7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -47,4 +183,8 @@
             <point key="canvasLocation" x="88.799999999999997" y="90.404797601199405"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppLogo" width="104" height="107"/>
+        <image name="YellowButton" width="128" height="101"/>
+    </resources>
 </document>

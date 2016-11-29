@@ -13,22 +13,22 @@ import AlamofireObjectMapper
 
 class Service {
     var persistanceManager = PersistenceManager.sharedInstance
-    var headers: [String: String] = [:]
+    var headers: HTTPHeaders = [:]
     
     init() {
         self.headers = [
             "Content-Type": "application/json",
-            "Accept": "application/json"
+//            "Accept": "application/json"
         ]
         
         updateHeaders()
     }
     
     func updateHeaders() -> Void {
-        if let token = persistanceManager.realm.objects(AccessToken.self).first {
-            self.headers["X-Auth-Token"] = token.accessToken
+        if let token = persistanceManager.realm.objects(Token.self).first {
+            self.headers["Authorization"] = "Bearer \(token.accessToken)"
         }
-        // TODO: notify other services in a better way
+
     }
     
 }
