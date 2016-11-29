@@ -11,6 +11,7 @@ import Material
 
 class LoginViewController: UIViewController {
     
+    var window = UIWindow(frame: UIScreen.main.bounds)
     @IBOutlet weak var usernameTextField: TextField!
     @IBOutlet weak var passwordTextField: TextField!
 
@@ -25,8 +26,27 @@ class LoginViewController: UIViewController {
         self.passwordTextField.resignFirstResponder()
         
         AuthServices.sharedInstance.login(username: usernameTextField.text!, password: passwordTextField.text!, completion: {
-            token, success -> Void in
-                print(token)
+            success, token -> Void in
+            if success {
+                AuthServices.sharedInstance.me {
+                    success, data -> Void in
+                    if success {
+                        let storyboard = UIStoryboard(name: StoryboardNames.Main.rawValue, bundle: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: ViewControllerStoryboardIdentifier.MainTabBarController.rawValue) as? MainTabBarController
+                        UIView.transition(with: self.window, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
+                            () in }) {
+                                (success: Bool) -> Void in
+                                self.window.rootViewController = vc
+                                self.window.makeKeyAndVisible()
+                        }
+                    } else {
+                       // error
+                    }
+                }
+            } else {
+                // error
+            }
+            
         })
     }
     

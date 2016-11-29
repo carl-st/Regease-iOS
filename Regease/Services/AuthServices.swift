@@ -18,12 +18,13 @@ class AuthServices: Service {
     override init() {}
     
     enum Path: String {
-        case Login = "login"
+        case Login = "auth/login"
+        case Me = "auth/me"
     }
     
     func login(username: String, password: String, completion: @escaping (Bool, Any) -> Void) {
-        let parameters: Parameters = ["username": username, "password": password]
-        let request = Alamofire.request(Urls.baseUrl + Path.Login.rawValue, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate()
+        let parameters: Parameters = ["username": username, "password": password, "grant_type":"password", "client_id":"1", "client_secret":"abc12345"]
+        Alamofire.request(Urls.baseUrl + Path.Login.rawValue, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate()
             .responseObject(completionHandler: {
                 (response: DataResponse<Token>) in
                 switch response.result {
@@ -38,7 +39,22 @@ class AuthServices: Service {
                     completion(false, error)
                 }
             })
-        print(request)
+    }
+    
+    func me(completion: @escaping (Bool, Any) -> Void) {
+        Alamofire.request(Urls.baseUrl + Path.Me.rawValue, method: .get, parameters: nil, headers: self.headers).validate()
+            .responseObject(completionHandler: {
+                (response: DataResponse<User>) in
+                switch response.result {
+                case .success(let user):
+                    print(user)
+                    self.persistanceManager.createOrUpdate(user)
+                    completion(true, user)
+                case .failure(let error):
+                    print(error)
+                    completion(false, error)
+                }
+            })
     }
     
     

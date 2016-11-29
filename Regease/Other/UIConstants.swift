@@ -20,3 +20,7 @@ public enum StoryboardNames : String {
     case Login
     case Main
 }
+
+public enum ViewControllerStoryboardIdentifier : String {
+    case MainTabBarController
+}

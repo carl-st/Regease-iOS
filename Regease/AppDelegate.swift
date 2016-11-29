@@ -16,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Ovvaride point for customization after application launch.
-//#if LOCAL
+#if LOCAL
         injectIP()
-//#endif
+#endif
     
         let _ = PersistenceManager.sharedInstance
         
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
         } else {
-//            AuthServices.sharedInstance.me { _, _ in }
+            AuthServices.sharedInstance.me { _, _ in }
         }
         
         return true
@@ -58,18 +58,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-//#if LOCAL
+#if LOCAL
 
     func injectIP() -> Void {
         let filePath = Bundle.main.path(forResource: "local", ofType: "ip")
         let data = NSData(contentsOfFile: filePath!)
         let stringData = NSString(data: data! as Data, encoding: String.Encoding.utf8.rawValue)
-        Urls.baseUrl = (stringData?.description)!
+        Urls.baseUrl = (stringData?.description)! + "api/"
         debugPrint("Hitting API on \(Urls.baseUrl)")
 
     }
 
-//#endif
+#endif
 
 }
 
