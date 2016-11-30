@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #if LOCAL
         injectIP()
 #endif
-    
+        applyAppearance()
         let _ = PersistenceManager.sharedInstance
         
         // Initial VC
