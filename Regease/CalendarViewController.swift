@@ -9,7 +9,7 @@
 import UIKit
 import JTAppleCalendar
 
-class CalendarViewController: UIViewController {
+class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
 
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     
@@ -18,14 +18,13 @@ class CalendarViewController: UIViewController {
         calendarView.dataSource = self
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CalendarDateCell")
+        calendarView.cellInset = CGPoint(x: 0, y: 0)
+        
+        
+        automaticallyAdjustsScrollViewInsets = false
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
-
-}
-
-extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
@@ -38,7 +37,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
             calendar: Calendar.current,
             generateInDates: .forAllMonths,
             generateOutDates: .tillEndOfGrid,
-            firstDayOfWeek: .sunday)
+            firstDayOfWeek: .monday)
         return parameters
     }
     
@@ -50,10 +49,37 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         
         // Setup text color
         if cellState.dateBelongsTo == .thisMonth {
-            myCustomCell.dayLabel.textColor = UIColor.black
+            myCustomCell.backgroundColor = UIColor.white
         } else {
-            myCustomCell.dayLabel.textColor = UIColor.gray
+            myCustomCell.backgroundColor = Colors.pastDate
         }
+        
+        handleCellSelection(view: cell, cellState: cellState)
     }
-}
+    
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
+        handleCellSelection(view: cell, cellState: cellState)
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
+        handleCellSelection(view: cell, cellState: cellState)
+    }
+    
+    func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState) {
+        guard let myCustomCell = view as? CalendarDateCellView  else {
+            return
+        }
+        if cellState.isSelected {
+            myCustomCell.backgroundColor = Colors.accent
+        } else {
+            if cellState.dateBelongsTo == .thisMonth {
+                myCustomCell.backgroundColor = UIColor.white
+            } else {
+                myCustomCell.backgroundColor = Colors.pastDate
+            }
+        }
+        
+        // TableView reload
+    }
 
+}

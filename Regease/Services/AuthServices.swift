@@ -19,6 +19,7 @@ class AuthServices: Service {
     
     enum Path: String {
         case Login = "auth/login"
+        case Logout = "auth/logout"
         case Me = "auth/me"
     }
     
@@ -57,6 +58,10 @@ class AuthServices: Service {
             })
     }
     
+    func logout(completion: @escaping (Bool, Any) -> Void) {
+        Alamofire.request(Urls.baseUrl + Path.Logout.rawValue, method: .post, parameters: nil, headers: self.headers).validate()
+            .completion(completion: completion)
+    }
     
     
     
