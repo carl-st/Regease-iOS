@@ -16,5 +16,9 @@ struct Urls {
     #else
     static var baseUrl = "http://injected:8080/api/"
     #endif
-    
+}
+
+struct Settings {
+    static var WorkingHours = "WorkingHours"
+    static var WorkingDays = "WorkingDays"
 }

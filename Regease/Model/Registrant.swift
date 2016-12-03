@@ -10,7 +10,7 @@ import ObjectMapper
 import RealmSwift
 
 class Registrant: Object, Mappable {
-    dynamic var id = 0
+    dynamic var id = ""
     dynamic var name = ""
     dynamic var email = ""
     

@@ -33,7 +33,7 @@ class AuthServices: Service {
                     print(token)
                     self.persistanceManager.createOrUpdate(token)
                     self.updateHeaders()
-//                    self.updateServicesHeaders()
+                    self.updateServiceHeaders()
                     completion(true, token)
                 case .failure(let error):
                     print(error)
@@ -53,7 +53,17 @@ class AuthServices: Service {
                     completion(true, user)
                 case .failure(let error):
                     print(error)
-                    completion(false, error)
+                    switch response.result.error as! AFError {
+                    case .responseValidationFailed(let reason):
+                        switch reason {
+                        case .unacceptableStatusCode(let code):
+                            completion(false, code)
+                        default:
+                            completion(false, error)
+                        }
+                    default:
+                        completion(false, error)
+                    }
                 }
             })
     }
@@ -63,7 +73,9 @@ class AuthServices: Service {
             .completion(completion: completion)
     }
     
-    
+    func updateServiceHeaders() {
+        CalendarServices.sharedInstance.headers = self.headers
+    }
     
 }
 

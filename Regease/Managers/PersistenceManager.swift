@@ -59,6 +59,14 @@ class PersistenceManager: RegistrationPersistenceProtocol {
         }
     }
     
+    func appointments() -> Results<Appointment> {
+        return realm.objects(Appointment.self)
+    }
+    
+    func settingForKey(key: String) -> Setting? {
+        return realm.object(ofType: Setting.self, forPrimaryKey: key)
+    }
+    
     func delete(_ realm: Realm) {
         try! realm.write {
             realm.deleteAll()

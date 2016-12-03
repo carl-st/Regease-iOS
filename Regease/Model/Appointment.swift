@@ -10,11 +10,11 @@ import ObjectMapper
 import RealmSwift
 
 class Appointment: Object, Mappable {
-    dynamic var id = 0
-    dynamic var registrant: Registrant?
+    dynamic var id = ""
+    dynamic var registrant = ""
     dynamic var date = ""
-    dynamic var business: Business?
-    dynamic var visitType: VisitType?
+    dynamic var business = ""
+    dynamic var visitType = ""
     
     override static func primaryKey() -> String? {
         return "id"

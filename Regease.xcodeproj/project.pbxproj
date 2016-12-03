@@ -83,6 +83,7 @@
 		F9D534641DEB355E009064A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D534621DEB355E009064A1 /* LaunchScreen.storyboard */; };
 		F9D5346F1DEB355E009064A1 /* RegeaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5346E1DEB355E009064A1 /* RegeaseTests.swift */; };
 		F9D5347A1DEB355E009064A1 /* RegeaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D534791DEB355E009064A1 /* RegeaseUITests.swift */; };
+		F9E794D61DF07D3200EF9DD4 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E794D51DF07D3200EF9DD4 /* Setting.swift */; };
 		F9F3E8931DEEF0F60011F8F4 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3E8921DEEF0F60011F8F4 /* Appearance.swift */; };
 		F9F3E8951DEEF1890011F8F4 /* Regease+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3E8941DEEF1890011F8F4 /* Regease+UIFont.swift */; };
 		F9F3E8971DEF03800011F8F4 /* Regease+DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3E8961DEF03800011F8F4 /* Regease+DataRequest.swift */; };
@@ -170,6 +171,7 @@
 		F9D534751DEB355E009064A1 /* RegeaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RegeaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D534791DEB355E009064A1 /* RegeaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegeaseUITests.swift; sourceTree = "<group>"; };
 		F9D5347B1DEB355E009064A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9E794D51DF07D3200EF9DD4 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = Model/Setting.swift; sourceTree = "<group>"; };
 		F9F3E8921DEEF0F60011F8F4 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Appearance.swift; path = Other/Appearance.swift; sourceTree = "<group>"; };
 		F9F3E8941DEEF1890011F8F4 /* Regease+UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Regease+UIFont.swift"; sourceTree = "<group>"; };
 		F9F3E8961DEF03800011F8F4 /* Regease+DataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Regease+DataRequest.swift"; path = "Other/Regease+DataRequest.swift"; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				F9F3E89A1DEF22FF0011F8F4 /* Registrant.swift */,
 				F9F3E89C1DEF24370011F8F4 /* VisitType.swift */,
 				F9F3E89E1DEF27260011F8F4 /* Business.swift */,
+				F9E794D51DF07D3200EF9DD4 /* Setting.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -776,6 +779,7 @@
 				F96DB4CE1DECDE8700E1CE38 /* LoginViewController.swift in Sources */,
 				F96DB4C61DECD8EE00E1CE38 /* AuthServices.swift in Sources */,
 				F9D5345C1DEB355E009064A1 /* CalendarViewController.swift in Sources */,
+				F9E794D61DF07D3200EF9DD4 /* Setting.swift in Sources */,
 				F9745F161DEC8A1200F2F7A7 /* Service.swift in Sources */,
 				F9F3E89B1DEF22FF0011F8F4 /* Registrant.swift in Sources */,
 				F96DB4CA1DECD9BD00E1CE38 /* CalendarViewModel.swift in Sources */,

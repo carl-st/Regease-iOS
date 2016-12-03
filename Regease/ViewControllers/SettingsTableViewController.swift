@@ -48,8 +48,8 @@ class SettingsTableViewController: UITableViewController {
                 if success {
                     PersistenceManager.sharedInstance.clearUserData()
                     UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-                    let storyboard = UIStoryboard(name: StoryboardNames.Main.rawValue, bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "signInNavigationController")
+                    let storyboard = UIStoryboard(name: StoryboardNames.Login.rawValue, bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: NavigationControllerStoryboardIdentifier.LoginNavigationController.rawValue)
                     UIView.transition(with: self.window, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
                         () in
                         self.window.rootViewController = vc

@@ -12,6 +12,8 @@ import JTAppleCalendar
 class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
 
     @IBOutlet weak var calendarView: JTAppleCalendarView!
+    var workingDays: [Int] = []
+    var workingHours: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,12 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         calendarView.registerCellViewXib(file: "CalendarDateCell")
         calendarView.cellInset = CGPoint(x: 0, y: 0)
         
+        if let realmWorkingDays = PersistenceManager.sharedInstance.settingForKey(key: Settings.WorkingDays) {
+            let stringWorkingDays = realmWorkingDays.value.components(separatedBy: ",")
+            for day in stringWorkingDays {
+                workingDays.append(Int(day)!)
+            }
+        }
         
         automaticallyAdjustsScrollViewInsets = false
         // Do any additional setup after loading the view, typically from a nib.
@@ -47,18 +55,14 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         // Setup Cell text
         myCustomCell.dayLabel.text = cellState.text
         
-        // Setup text color
-        if cellState.dateBelongsTo == .thisMonth {
-            myCustomCell.backgroundColor = UIColor.white
-        } else {
-            myCustomCell.backgroundColor = Colors.pastDate
-        }
-        
         handleCellSelection(view: cell, cellState: cellState)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
+        if cellState.dateBelongsTo != .thisMonth {
+            calendarView.scrollToDate(cellState.date)
+        }
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
@@ -69,13 +73,17 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         guard let myCustomCell = view as? CalendarDateCellView  else {
             return
         }
-        if cellState.isSelected {
-            myCustomCell.backgroundColor = Colors.accent
+        if workingDays.index(of: cellState.column() + 1) == nil {
+            myCustomCell.backgroundColor = Colors.unavailableDate
         } else {
-            if cellState.dateBelongsTo == .thisMonth {
-                myCustomCell.backgroundColor = UIColor.white
+            if cellState.isSelected {
+                myCustomCell.backgroundColor = Colors.accent
             } else {
-                myCustomCell.backgroundColor = Colors.pastDate
+                if cellState.dateBelongsTo == .thisMonth {
+                    myCustomCell.backgroundColor = UIColor.white
+                } else {
+                    myCustomCell.backgroundColor = Colors.pastDate
+                }
             }
         }
         

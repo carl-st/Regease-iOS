@@ -10,7 +10,7 @@ import ObjectMapper
 import RealmSwift
 
 class VisitType: Object, Mappable {
-    dynamic var id = 0
+    dynamic var id = ""
     dynamic var typeDescription = ""
     dynamic var name = ""
     dynamic var duration = 0

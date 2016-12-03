@@ -10,7 +10,7 @@ import ObjectMapper
 import RealmSwift
 
 class Business: Object, Mappable {
-    dynamic var id = 0
+    dynamic var id = ""
     dynamic var businessDescription = ""
     dynamic var name = ""
     dynamic var email = ""
