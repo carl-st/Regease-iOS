@@ -9,11 +9,12 @@
 import UIKit
 import JTAppleCalendar
 
-class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
+class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     var workingDays: [Int] = []
     var workingHours: [String] = []
+    var calendarViewModel: CalendarViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,10 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CalendarDateCell")
         calendarView.cellInset = CGPoint(x: 0, y: 0)
+
+        if calendarViewModel == nil {
+            calendarViewModel = CalendarViewModel()
+        }
         
         if let realmWorkingDays = PersistenceManager.sharedInstance.settingForKey(key: Settings.WorkingDays) {
             let stringWorkingDays = realmWorkingDays.value.components(separatedBy: ",")
@@ -89,5 +94,21 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         
         // TableView reload
     }
+
+    // TableView Delegates
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let viewModel = calendarViewModel {
+            return viewModel.events.count
+        } else {
+            return 0
+        }
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellReuseIdentifier.CalendarDayCell.rawValue) as? CalendarDayTableViewCell
+        return cell!
+    }
+
 
 }

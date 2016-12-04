@@ -10,6 +10,7 @@
 		906B7A2E778ACEDE371E48B7 /* Pods_RegeaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10A6CD72FA053A996974DF1 /* Pods_RegeaseTests.framework */; };
 		CC2D5FD2E254D8C74D007EB7 /* Pods_RegeaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C99A8AA75731F298EFC8DCC /* Pods_RegeaseUITests.framework */; };
 		DFB94427399ACCD398DCBB38 /* Pods_Regease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F2099F6C7A666E6278953 /* Pods_Regease.framework */; };
+		F90F32041DF4A8C400EC7B08 /* CalendarDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F32031DF4A8C400EC7B08 /* CalendarDayTableViewCell.swift */; };
 		F96A53241DEE028D0093761E /* CalendarDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96A53231DEE028D0093761E /* CalendarDateCell.xib */; };
 		F96A53261DEE03470093761E /* CalendarDateCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A53251DEE03470093761E /* CalendarDateCellView.swift */; };
 		F96DB4C61DECD8EE00E1CE38 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DB4C51DECD8ED00E1CE38 /* AuthServices.swift */; };
@@ -124,6 +125,7 @@
 		DC70044ABB6800D0E3AC1EB4 /* Pods-Regease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Regease.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Regease/Pods-Regease.debug.xcconfig"; sourceTree = "<group>"; };
 		F11F2099F6C7A666E6278953 /* Pods_Regease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Regease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4564C4AAD6A61E8AA43949E /* Pods-RegeaseUITests.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegeaseUITests.local.xcconfig"; path = "Pods/Target Support Files/Pods-RegeaseUITests/Pods-RegeaseUITests.local.xcconfig"; sourceTree = "<group>"; };
+		F90F32031DF4A8C400EC7B08 /* CalendarDayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarDayTableViewCell.swift; path = Other/CalendarDayTableViewCell.swift; sourceTree = "<group>"; };
 		F96A53231DEE028D0093761E /* CalendarDateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendarDateCell.xib; path = Other/CalendarDateCell.xib; sourceTree = "<group>"; };
 		F96A53251DEE03470093761E /* CalendarDateCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarDateCellView.swift; path = Other/CalendarDateCellView.swift; sourceTree = "<group>"; };
 		F96DB4C51DECD8ED00E1CE38 /* AuthServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthServices.swift; path = Services/AuthServices.swift; sourceTree = "<group>"; };
@@ -236,6 +238,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F90F32021DF4A8A700EC7B08 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F90F32031DF4A8C400EC7B08 /* CalendarDayTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		F96A53221DEE026C0093761E /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +276,7 @@
 		F9745F0E1DEC34DC00F2F7A7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				F90F32021DF4A8A700EC7B08 /* Cells */,
 				F9F3E8911DEEF0C60011F8F4 /* Extensions */,
 				F96A53221DEE026C0093761E /* XIBs */,
 				F9B390271DEDCA37000FE192 /* Fonts */,
@@ -776,6 +787,7 @@
 			files = (
 				F9745F1B1DEC8DCA00F2F7A7 /* Token.swift in Sources */,
 				F9745F1F1DECCD4300F2F7A7 /* GlobalConstants.swift in Sources */,
+				F90F32041DF4A8C400EC7B08 /* CalendarDayTableViewCell.swift in Sources */,
 				F96DB4CE1DECDE8700E1CE38 /* LoginViewController.swift in Sources */,
 				F96DB4C61DECD8EE00E1CE38 /* AuthServices.swift in Sources */,
 				F9D5345C1DEB355E009064A1 /* CalendarViewController.swift in Sources */,

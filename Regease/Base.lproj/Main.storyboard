@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Dashboard-->
         <scene sceneID="hNz-n2-bh7">
@@ -65,11 +70,76 @@
                                     <constraint firstAttribute="height" constant="354" id="L8H-fF-Rgx"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WaM-K0-0zr">
+                                <rect key="frame" x="0.0" y="354" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3FE-Y7-7yP" customClass="CalendarDayTableViewCell" customModule="Regease" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3FE-Y7-7yP" id="Qj0-ZQ-H95">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Karol Stępień" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jl-LN-qaL">
+                                                    <rect key="frame" x="74" y="8" width="293" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="Mqi-lH-NDd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Konsultacja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZE-5C-ePx">
+                                                    <rect key="frame" x="74" y="26" width="293" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="mCm-VW-pTL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlU-MX-dHd">
+                                                    <rect key="frame" x="8" y="8" width="58" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="58" id="4oW-zd-VFr"/>
+                                                    </constraints>
+                                                    <string key="text">10:00
+10:30</string>
+                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="5jl-LN-qaL" secondAttribute="trailing" constant="8" id="A3m-Wm-etE"/>
+                                                <constraint firstAttribute="trailing" secondItem="kZE-5C-ePx" secondAttribute="trailing" constant="8" id="Ijw-XN-2U6"/>
+                                                <constraint firstItem="XlU-MX-dHd" firstAttribute="leading" secondItem="Qj0-ZQ-H95" secondAttribute="leading" constant="8" id="LFa-nP-NKu"/>
+                                                <constraint firstItem="5jl-LN-qaL" firstAttribute="leading" secondItem="XlU-MX-dHd" secondAttribute="trailing" constant="8" id="VIl-2U-1LH"/>
+                                                <constraint firstItem="XlU-MX-dHd" firstAttribute="top" secondItem="Qj0-ZQ-H95" secondAttribute="top" constant="8" id="VgJ-zM-w3j"/>
+                                                <constraint firstAttribute="bottom" secondItem="kZE-5C-ePx" secondAttribute="bottom" constant="8" id="ZNi-5X-Hhs"/>
+                                                <constraint firstItem="5jl-LN-qaL" firstAttribute="top" secondItem="Qj0-ZQ-H95" secondAttribute="top" constant="8" id="dgB-mb-szq"/>
+                                                <constraint firstItem="kZE-5C-ePx" firstAttribute="leading" secondItem="XlU-MX-dHd" secondAttribute="trailing" constant="8" id="jye-eU-gMf"/>
+                                                <constraint firstAttribute="bottom" secondItem="XlU-MX-dHd" secondAttribute="bottom" constant="8" id="r0k-p9-3f5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="hoursLabel" destination="XlU-MX-dHd" id="wN4-jJ-d6A"/>
+                                            <outlet property="nameLabel" destination="5jl-LN-qaL" id="ajb-7F-YvM"/>
+                                            <outlet property="typeLabel" destination="kZE-5C-ePx" id="m3M-Bl-IIY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="WaM-K0-0zr" secondAttribute="bottom" id="Awd-Vu-TMg"/>
+                            <constraint firstAttribute="trailing" secondItem="WaM-K0-0zr" secondAttribute="trailing" id="CnI-mX-Js8"/>
+                            <constraint firstItem="WaM-K0-0zr" firstAttribute="top" secondItem="UFU-jL-KzJ" secondAttribute="bottom" id="Uul-xc-h4d"/>
                             <constraint firstAttribute="trailing" secondItem="UFU-jL-KzJ" secondAttribute="trailing" id="asl-t6-WyY"/>
                             <constraint firstItem="UFU-jL-KzJ" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="bLs-Ev-3G1"/>
+                            <constraint firstItem="WaM-K0-0zr" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="sar-cV-P9a"/>
                             <constraint firstItem="UFU-jL-KzJ" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="tp6-yh-dBa"/>
                         </constraints>
                     </view>
@@ -212,7 +282,7 @@
                             <tableViewSection headerTitle="App" id="jR7-wH-seb">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xHj-K4-vpJ">
-                                        <rect key="frame" x="0.0" y="244" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="245" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xHj-K4-vpJ" id="fjz-iI-ZGO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -220,7 +290,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KEg-wX-OBK">
-                                        <rect key="frame" x="0.0" y="288" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="289" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KEg-wX-OBK" id="gMe-Sc-ejE">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -228,7 +298,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gud-Nv-hky">
-                                        <rect key="frame" x="0.0" y="332" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="333" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gud-Nv-hky" id="Hmo-Aq-LP1">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -240,7 +310,7 @@
                             <tableViewSection footerTitle="Regease v1.0 (1)" id="Gvh-2p-YCF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eNy-0j-5cF">
-                                        <rect key="frame" x="0.0" y="412" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="413" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eNy-0j-5cF" id="zDc-JC-CE5">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

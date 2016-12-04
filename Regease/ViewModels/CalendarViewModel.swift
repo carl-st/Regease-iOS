@@ -9,5 +9,15 @@
 import Foundation
 
 class CalendarViewModel {
+
+    var events: [Appointment] = []
+
+    init(persistence: PersistenceManager = PersistenceManager.sharedInstance) {
+
+    }
     
+    func loadDay(date: NSDate) {
+        
+    }
+
 }

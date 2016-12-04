@@ -53,15 +53,19 @@ class AuthServices: Service {
                     completion(true, user)
                 case .failure(let error):
                     print(error)
-                    switch response.result.error as! AFError {
-                    case .responseValidationFailed(let reason):
-                        switch reason {
-                        case .unacceptableStatusCode(let code):
-                            completion(false, code)
+                    if error is AFError {
+                        switch response.result.error as! AFError {
+                        case .responseValidationFailed(let reason):
+                            switch reason {
+                            case .unacceptableStatusCode(let code):
+                                completion(false, code)
+                            default:
+                                completion(false, error)
+                            }
                         default:
                             completion(false, error)
                         }
-                    default:
+                    } else {
                         completion(false, error)
                     }
                 }
