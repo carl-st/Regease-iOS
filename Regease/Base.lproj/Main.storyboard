@@ -74,7 +74,7 @@
                                 <rect key="frame" x="0.0" y="354" width="375" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3FE-Y7-7yP" customClass="CalendarDayTableViewCell" customModule="Regease" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarDayCell" id="3FE-Y7-7yP" customClass="CalendarDayTableViewCell" customModule="Regease" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3FE-Y7-7yP" id="Qj0-ZQ-H95">
@@ -130,6 +130,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="Mjj-rG-2IX"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="AFd-Ia-Nwm"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -146,6 +150,7 @@
                     <navigationItem key="navigationItem" title="Calendar" id="5BK-fp-TRK"/>
                     <connections>
                         <outlet property="calendarView" destination="UFU-jL-KzJ" id="Mvl-WW-OMm"/>
+                        <outlet property="tableView" destination="WaM-K0-0zr" id="AYw-KS-gKz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

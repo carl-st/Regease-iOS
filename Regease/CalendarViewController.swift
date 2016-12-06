@@ -11,6 +11,7 @@ import JTAppleCalendar
 
 class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     var workingDays: [Int] = []
     var workingHours: [String] = []
@@ -21,8 +22,9 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         calendarView.dataSource = self
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CalendarDateCell")
+        calendarView.registerHeaderView(xibFileNames: ["CalendarHeader"])
         calendarView.cellInset = CGPoint(x: 0, y: 0)
-
+        calendarView.scrollToDate(Date(), animateScroll: false)
         if calendarViewModel == nil {
             calendarViewModel = CalendarViewModel()
         }
@@ -42,10 +44,13 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         
-        let startDate = formatter.date(from: "2016 02 01")! // You can use date generated from a formatter
-        let endDate = Date()                                // You can also use dates created from this function
-        let parameters = ConfigurationParameters(startDate: startDate,
-                                                 endDate: endDate,
+        let calendar = NSCalendar.current
+        let previousYear = calendar.date(byAdding: .year, value: -1, to: Date())
+        let nextYear = calendar.date(byAdding: .year, value: 1, to: Date())
+                        // You can also use dates created from this function
+        let startDate = previousYear // You can use date generated from a formatter
+        let parameters = ConfigurationParameters(startDate: startDate!,
+                                                 endDate: nextYear!,
                                                  numberOfRows: 6, // Only 1, 2, 3, & 6 are allowed
             calendar: Calendar.current,
             generateInDates: .forAllMonths,
@@ -67,6 +72,11 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         handleCellSelection(view: cell, cellState: cellState)
         if cellState.dateBelongsTo != .thisMonth {
             calendarView.scrollToDate(cellState.date)
+        }
+        // TODO: Check for Realm's support for Swift 3 Date
+        if let viewModel = calendarViewModel {
+            viewModel.loadDay(date: date as NSDate)
+            tableView.reloadData()
         }
     }
     
@@ -94,6 +104,15 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         
         // TableView reload
     }
+    
+    // This sets the height of your header
+    func calendar(_ calendar: JTAppleCalendarView, sectionHeaderSizeFor range: (start: Date, end: Date), belongingTo month: Int) -> CGSize {
+        return CGSize(width: 200, height: 40)
+    }
+    // This setups the display of your header
+    func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
+        _ = (header as? CalendarHeader)
+    }
 
     // TableView Delegates
 
@@ -107,6 +126,9 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellReuseIdentifier.CalendarDayCell.rawValue) as? CalendarDayTableViewCell
+        if let viewModel = calendarViewModel {
+            cell?.configure(appointment: viewModel.events[indexPath.row])
+        }
         return cell!
     }
 

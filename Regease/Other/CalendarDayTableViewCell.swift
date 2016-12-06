@@ -15,7 +15,13 @@ class CalendarDayTableViewCell: UITableViewCell {
     @IBOutlet weak var typeLabel: UILabel!
     
     func configure(appointment: Appointment) {
-        
+        if let visitType = appointment.visitType {
+            typeLabel.text = visitType.name
+            hoursLabel.text = "\(appointment.date.string(with: .shortTime))\n\(appointment.date.addingTimeInterval(TimeInterval((visitType.duration))))"
+        }
+        if let registrant =  appointment.registrant {
+            nameLabel.text = registrant.name
+        }
     }
     
 }

@@ -14,7 +14,7 @@ class Setting: Object, Mappable {
     dynamic var category = SettingCategory.Undefined.rawValue
     dynamic var key = SettingKey.Undefined.rawValue
     dynamic var value = ""
-    dynamic var business = ""
+    dynamic var business: Business?
     
     var categoryEnum: SettingCategory {
         get {

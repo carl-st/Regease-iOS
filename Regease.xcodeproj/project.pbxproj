@@ -11,6 +11,10 @@
 		CC2D5FD2E254D8C74D007EB7 /* Pods_RegeaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C99A8AA75731F298EFC8DCC /* Pods_RegeaseUITests.framework */; };
 		DFB94427399ACCD398DCBB38 /* Pods_Regease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11F2099F6C7A666E6278953 /* Pods_Regease.framework */; };
 		F90F32041DF4A8C400EC7B08 /* CalendarDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F32031DF4A8C400EC7B08 /* CalendarDayTableViewCell.swift */; };
+		F90F32061DF4AEAB00EC7B08 /* Regease+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F32051DF4AEAB00EC7B08 /* Regease+DateFormatter.swift */; };
+		F90F32081DF4AFED00EC7B08 /* Regease+NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F32071DF4AFED00EC7B08 /* Regease+NSDate.swift */; };
+		F92658ED1DF70D5000EA8598 /* CalendarHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F92658EC1DF70D5000EA8598 /* CalendarHeader.xib */; };
+		F92658F01DF7106400EA8598 /* CalendarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92658EF1DF7106400EA8598 /* CalendarHeader.swift */; };
 		F96A53241DEE028D0093761E /* CalendarDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96A53231DEE028D0093761E /* CalendarDateCell.xib */; };
 		F96A53261DEE03470093761E /* CalendarDateCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A53251DEE03470093761E /* CalendarDateCellView.swift */; };
 		F96DB4C61DECD8EE00E1CE38 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DB4C51DECD8ED00E1CE38 /* AuthServices.swift */; };
@@ -126,6 +130,10 @@
 		F11F2099F6C7A666E6278953 /* Pods_Regease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Regease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4564C4AAD6A61E8AA43949E /* Pods-RegeaseUITests.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegeaseUITests.local.xcconfig"; path = "Pods/Target Support Files/Pods-RegeaseUITests/Pods-RegeaseUITests.local.xcconfig"; sourceTree = "<group>"; };
 		F90F32031DF4A8C400EC7B08 /* CalendarDayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarDayTableViewCell.swift; path = Other/CalendarDayTableViewCell.swift; sourceTree = "<group>"; };
+		F90F32051DF4AEAB00EC7B08 /* Regease+DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Regease+DateFormatter.swift"; path = "Other/Regease+DateFormatter.swift"; sourceTree = "<group>"; };
+		F90F32071DF4AFED00EC7B08 /* Regease+NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Regease+NSDate.swift"; sourceTree = "<group>"; };
+		F92658EC1DF70D5000EA8598 /* CalendarHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendarHeader.xib; path = Other/CalendarHeader.xib; sourceTree = "<group>"; };
+		F92658EF1DF7106400EA8598 /* CalendarHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarHeader.swift; path = Other/CalendarHeader.swift; sourceTree = "<group>"; };
 		F96A53231DEE028D0093761E /* CalendarDateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendarDateCell.xib; path = Other/CalendarDateCell.xib; sourceTree = "<group>"; };
 		F96A53251DEE03470093761E /* CalendarDateCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarDateCellView.swift; path = Other/CalendarDateCellView.swift; sourceTree = "<group>"; };
 		F96DB4C51DECD8ED00E1CE38 /* AuthServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthServices.swift; path = Services/AuthServices.swift; sourceTree = "<group>"; };
@@ -246,11 +254,21 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		F92658EE1DF7104100EA8598 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				F96A53251DEE03470093761E /* CalendarDateCellView.swift */,
+				F9D5345B1DEB355E009064A1 /* CalendarViewController.swift */,
+				F92658EF1DF7106400EA8598 /* CalendarHeader.swift */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
 		F96A53221DEE026C0093761E /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
 				F96A53231DEE028D0093761E /* CalendarDateCell.xib */,
-				F96A53251DEE03470093761E /* CalendarDateCellView.swift */,
+				F92658EC1DF70D5000EA8598 /* CalendarHeader.xib */,
 			);
 			name = XIBs;
 			sourceTree = "<group>";
@@ -266,8 +284,8 @@
 		F96DB4CC1DECDE6700E1CE38 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F92658EE1DF7104100EA8598 /* Calendar */,
 				F9D534591DEB355E009064A1 /* DashboardViewController.swift */,
-				F9D5345B1DEB355E009064A1 /* CalendarViewController.swift */,
 				F9745F211DECD33C00F2F7A7 /* SettingsTableViewController.swift */,
 			);
 			name = Home;
@@ -443,6 +461,8 @@
 				F9F3E8921DEEF0F60011F8F4 /* Appearance.swift */,
 				F9F3E8941DEEF1890011F8F4 /* Regease+UIFont.swift */,
 				F9F3E8961DEF03800011F8F4 /* Regease+DataRequest.swift */,
+				F90F32051DF4AEAB00EC7B08 /* Regease+DateFormatter.swift */,
+				F90F32071DF4AFED00EC7B08 /* Regease+NSDate.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -575,6 +595,7 @@
 				F9B390561DEDCA4E000FE192 /* Roboto-LightItalic.ttf in Resources */,
 				F9B390651DEDCA4E000FE192 /* Roboto-ThinItalic.ttf in Resources */,
 				F9B390591DEDCA4E000FE192 /* Roboto-Medium.ttf in Resources */,
+				F92658ED1DF70D5000EA8598 /* CalendarHeader.xib in Resources */,
 				F96A53241DEE028D0093761E /* CalendarDateCell.xib in Resources */,
 				F9B390531DEDCA4E000FE192 /* Roboto-Light.ttf in Resources */,
 				F9745F141DEC5B5400F2F7A7 /* BarIcons.xcassets in Resources */,
@@ -790,6 +811,7 @@
 				F90F32041DF4A8C400EC7B08 /* CalendarDayTableViewCell.swift in Sources */,
 				F96DB4CE1DECDE8700E1CE38 /* LoginViewController.swift in Sources */,
 				F96DB4C61DECD8EE00E1CE38 /* AuthServices.swift in Sources */,
+				F90F32081DF4AFED00EC7B08 /* Regease+NSDate.swift in Sources */,
 				F9D5345C1DEB355E009064A1 /* CalendarViewController.swift in Sources */,
 				F9E794D61DF07D3200EF9DD4 /* Setting.swift in Sources */,
 				F9745F161DEC8A1200F2F7A7 /* Service.swift in Sources */,
@@ -799,10 +821,12 @@
 				F9745F1D1DEC958A00F2F7A7 /* User.swift in Sources */,
 				F9745F221DECD33C00F2F7A7 /* SettingsTableViewController.swift in Sources */,
 				F9F3E8971DEF03800011F8F4 /* Regease+DataRequest.swift in Sources */,
+				F90F32061DF4AEAB00EC7B08 /* Regease+DateFormatter.swift in Sources */,
 				F9745F191DEC8AC900F2F7A7 /* PersistenceManager.swift in Sources */,
 				F9F3E8991DEF1E7F0011F8F4 /* Appointment.swift in Sources */,
 				F9F4EDAD1DECF39900117C3A /* CalendarServices.swift in Sources */,
 				F9745F241DECD73100F2F7A7 /* UIConstants.swift in Sources */,
+				F92658F01DF7106400EA8598 /* CalendarHeader.swift in Sources */,
 				F96DB4C81DECD98800E1CE38 /* DashboardViewModel.swift in Sources */,
 				F9F3E8951DEEF1890011F8F4 /* Regease+UIFont.swift in Sources */,
 				F9F3E89D1DEF24370011F8F4 /* VisitType.swift in Sources */,

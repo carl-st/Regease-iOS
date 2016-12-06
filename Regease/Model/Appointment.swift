@@ -11,10 +11,10 @@ import RealmSwift
 
 class Appointment: Object, Mappable {
     dynamic var id = ""
-    dynamic var registrant = ""
-    dynamic var date = ""
-    dynamic var business = ""
-    dynamic var visitType = ""
+    dynamic var registrant: Registrant?
+    dynamic var date = NSDate()
+    dynamic var business: Business?
+    dynamic var visitType: VisitType?
     
     override static func primaryKey() -> String? {
         return "id"
@@ -27,9 +27,13 @@ class Appointment: Object, Mappable {
     func mapping(map: Map) {
         id <- map["_id"]
         registrant <- map["registrant"]
-        date <- map["date"]
+        
         business <- map["business"]
         visitType <- map["visitType"]
+        
+        var stringDate = ""
+        stringDate <- map["date"]
+        date = NSDate(string: stringDate, formatter: .dateTimeWithSeconds)!
     }
     
 }
