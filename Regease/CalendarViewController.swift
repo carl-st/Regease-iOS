@@ -16,6 +16,13 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
     var workingDays: [Int] = []
     var workingHours: [String] = []
     var calendarViewModel: CalendarViewModel?
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +30,11 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CalendarDateCell")
         calendarView.registerHeaderView(xibFileNames: ["CalendarHeader"])
-        calendarView.cellInset = CGPoint(x: 0, y: 0)
+        calendarView.cellInset = CGPoint(x: 0, y: 30)
         calendarView.scrollToDate(Date(), animateScroll: false)
+        calendarView.selectDates([Date()])
+        updateHeader(date: Date())
+        
         if calendarViewModel == nil {
             calendarViewModel = CalendarViewModel()
         }
@@ -38,6 +48,14 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         
         automaticallyAdjustsScrollViewInsets = false
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @IBAction func leftButtonAction(_ sender: Any) {
+        calendarView.scrollToPreviousSegment()
+    }
+    
+    @IBAction func rightButtonAction(_ sender: Any) {
+        calendarView.scrollToNextSegment()
     }
 
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
@@ -73,6 +91,7 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         if cellState.dateBelongsTo != .thisMonth {
             calendarView.scrollToDate(cellState.date)
         }
+        updateHeader(date: cellState.date)
         // TODO: Check for Realm's support for Swift 3 Date
         if let viewModel = calendarViewModel {
             viewModel.loadDay(date: date as NSDate)
@@ -88,16 +107,28 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         guard let myCustomCell = view as? CalendarDateCellView  else {
             return
         }
-        if workingDays.index(of: cellState.column() + 1) == nil {
-            myCustomCell.backgroundColor = Colors.unavailableDate
+        if workingDays.index(of: cellState.column() + 1) == nil { // jesli nie jest working day
+            myCustomCell.unavailableView.isHidden = false
+            myCustomCell.dayLabel.textColor = UIColor.black
+            myCustomCell.selectionView.isHidden = true
+            if cellState.dateBelongsTo != .thisMonth {
+                myCustomCell.dayLabel.textColor = Colors.pastDate
+            }
         } else {
             if cellState.isSelected {
-                myCustomCell.backgroundColor = Colors.accent
+                myCustomCell.unavailableView.isHidden = true
+                myCustomCell.dayLabel.textColor = UIColor.white
+                myCustomCell.selectionView.isHidden = false
+                myCustomCell.selectionView.layer.cornerRadius = 20
             } else {
                 if cellState.dateBelongsTo == .thisMonth {
-                    myCustomCell.backgroundColor = UIColor.white
+                    myCustomCell.unavailableView.isHidden = true
+                    myCustomCell.dayLabel.textColor = UIColor.black
+                    myCustomCell.selectionView.isHidden = true
                 } else {
-                    myCustomCell.backgroundColor = Colors.pastDate
+                    myCustomCell.dayLabel.textColor = Colors.pastDate
+                    myCustomCell.unavailableView.isHidden = true
+                    myCustomCell.selectionView.isHidden = true
                 }
             }
         }
@@ -112,6 +143,15 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
     // This setups the display of your header
     func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
         _ = (header as? CalendarHeader)
+         updateHeader(date: range.start)
+    }
+
+    func updateHeader(date: Date) {
+        let calendar = Calendar.current
+        let month = calendar.component(.month, from: date)
+        let year = calendar.component(.year, from: date)
+        monthLabel.text = months[month-1]
+        yearLabel.text = "\(year)"
     }
 
     // TableView Delegates

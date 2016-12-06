@@ -20,6 +20,22 @@
             <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAq-ml-b1X">
+                    <rect key="frame" x="150" y="150" width="50" height="50"/>
+                    <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="CmZ-pn-IOP"/>
+                        <constraint firstAttribute="height" constant="50" id="WZM-bZ-2sq"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYR-ID-YH5">
+                    <rect key="frame" x="155" y="155" width="40" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="mgl-TU-6FG"/>
+                        <constraint firstAttribute="width" constant="40" id="zOJ-5W-cfi"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fw9-bM-unr">
                     <rect key="frame" x="90" y="106" width="171" height="138"/>
                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
@@ -30,11 +46,17 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Fw9-bM-unr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5lt-iS-Hu1"/>
+                <constraint firstItem="HYR-ID-YH5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="G33-2m-zPj"/>
+                <constraint firstItem="HYR-ID-YH5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Qwl-Ch-j3U"/>
                 <constraint firstItem="Fw9-bM-unr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="irw-FO-V9z"/>
+                <constraint firstItem="hAq-ml-b1X" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vH6-Ap-YPn"/>
+                <constraint firstItem="hAq-ml-b1X" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vUS-Br-DGF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="dayLabel" destination="Fw9-bM-unr" id="Val-d2-tN5"/>
+                <outlet property="selectionView" destination="HYR-ID-YH5" id="v4R-yT-0Li"/>
+                <outlet property="unavailableView" destination="hAq-ml-b1X" id="eDt-cD-tlD"/>
             </connections>
             <point key="canvasLocation" x="-64" y="-93"/>
         </view>
