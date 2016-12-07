@@ -10,6 +10,8 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
 
+    var window = UIWindow(frame: UIScreen.main.bounds)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +40,28 @@ class SettingsTableViewController: UITableViewController {
             footer.textLabel!.text = "\(displayName) v\(version) (\(build))"
         }
     }
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        if indexPath.section == 2 {
+            AuthServices.sharedInstance.logout(completion: {
+                success, error -> Void in
+                if success {
+                    PersistenceManager.sharedInstance.clearUserData()
+                    UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                    let storyboard = UIStoryboard(name: StoryboardNames.Login.rawValue, bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: NavigationControllerStoryboardIdentifier.LoginNavigationController.rawValue)
+                    UIView.transition(with: self.window, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
+                        () in
+                        self.window.rootViewController = vc
+                        self.window.makeKeyAndVisible()
+                    }, completion: nil)
+                } else {
+                    // Error
+                }
+            })
+        }
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

@@ -24,3 +24,7 @@ public enum StoryboardNames : String {
 public enum ViewControllerStoryboardIdentifier : String {
     case MainTabBarController
 }
+
+public enum TableViewCellReuseIdentifier : String {
+    case CalendarDayCell
+}

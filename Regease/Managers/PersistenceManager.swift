@@ -58,6 +58,23 @@ class PersistenceManager: RegistrationPersistenceProtocol {
             realm.add(array, update: true)
         }
     }
+
+    func visitType(forId id: String) -> VisitType? {
+        return realm.object(ofType: VisitType.self, forPrimaryKey: id)
+    }
+    
+    func appointments() -> Results<Appointment> {
+        return realm.objects(Appointment.self)
+    }
+    
+    func appointments(forDate date: NSDate) -> Results<Appointment> {
+        let nextDay = date.addingTimeInterval(60*60*24)
+        return realm.objects(Appointment.self).filter("date > %@ && date <= %@", date, nextDay)
+    }
+    
+    func settingForKey(key: String) -> Setting? {
+        return realm.object(ofType: Setting.self, forPrimaryKey: key)
+    }
     
     func delete(_ realm: Realm) {
         try! realm.write {
@@ -71,5 +88,9 @@ class PersistenceManager: RegistrationPersistenceProtocol {
     
     func user() -> User? {
         return realm.objects(User.self).first
+    }
+    
+    func registrant(forId id: String) -> Registrant? {
+        return realm.object(ofType: Registrant.self, forPrimaryKey: id)
     }
 }

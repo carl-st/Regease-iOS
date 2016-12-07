@@ -13,7 +13,8 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        CalendarServices.sharedInstance.getAppointments(completion: {_, _ -> Void in})
+        CalendarServices.sharedInstance.getSetting(forKey: Settings.WorkingDays, completion: {_, _ -> Void in})
     }
 
 

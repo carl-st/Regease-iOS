@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #if LOCAL
         injectIP()
 #endif
-    
+        applyAppearance()
         let _ = PersistenceManager.sharedInstance
         
         // Initial VC
@@ -30,7 +30,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
         } else {
-            AuthServices.sharedInstance.me { _, _ in }
+            AuthServices.sharedInstance.me { _, data in
+                if data is Int {
+                    if data as! Int == 401 {
+                        PersistenceManager.sharedInstance.clearUserData()
+                        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                        let storyboard = UIStoryboard(name: StoryboardNames.Login.rawValue, bundle: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: NavigationControllerStoryboardIdentifier.LoginNavigationController.rawValue)
+                        UIView.transition(with: self.window!, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
+                            () in
+                            self.window?.rootViewController = vc
+                            self.window?.makeKeyAndVisible()
+                        }, completion: nil)
+                    }
+                }
+            }
         }
         
         return true

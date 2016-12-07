@@ -19,6 +19,7 @@ class AuthServices: Service {
     
     enum Path: String {
         case Login = "auth/login"
+        case Logout = "auth/logout"
         case Me = "auth/me"
     }
     
@@ -32,7 +33,7 @@ class AuthServices: Service {
                     print(token)
                     self.persistanceManager.createOrUpdate(token)
                     self.updateHeaders()
-//                    self.updateServicesHeaders()
+                    self.updateServiceHeaders()
                     completion(true, token)
                 case .failure(let error):
                     print(error)
@@ -52,13 +53,33 @@ class AuthServices: Service {
                     completion(true, user)
                 case .failure(let error):
                     print(error)
-                    completion(false, error)
+                    if error is AFError {
+                        switch response.result.error as! AFError {
+                        case .responseValidationFailed(let reason):
+                            switch reason {
+                            case .unacceptableStatusCode(let code):
+                                completion(false, code)
+                            default:
+                                completion(false, error)
+                            }
+                        default:
+                            completion(false, error)
+                        }
+                    } else {
+                        completion(false, error)
+                    }
                 }
             })
     }
     
+    func logout(completion: @escaping (Bool, Any) -> Void) {
+        Alamofire.request(Urls.baseUrl + Path.Logout.rawValue, method: .post, parameters: nil, headers: self.headers).validate()
+            .completion(completion: completion)
+    }
     
-    
+    func updateServiceHeaders() {
+        CalendarServices.sharedInstance.headers = self.headers
+    }
     
 }
 
