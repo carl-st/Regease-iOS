@@ -17,26 +17,30 @@ class DashboardWelcomeTableViewCell: UITableViewCell {
     
     var toolbar: Toolbar!
     var moreButton: IconButton!
-    
     var contentViewLabel: UILabel!
-    
     var bottomBar: Bar!
     var dateFormatter: DateFormatter!
     var dateLabel: UILabel!
     var favoriteButton: IconButton!
     
+    var user: User?
+    var appointments: [Appointment] = []
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = Colors.primary
-        
+    }
+    
+    func configure(forUser user: User, andAppointments appointments: [Appointment]) {
+        self.user = user
+        self.appointments = appointments
         prepareDateFormatter()
-        prepareDateLabel()
+        //        prepareDateLabel()
         prepareToolbar()
-        prepareDateLabel()
+        //        prepareDateLabel()
+        prepareContentViewLabel()
         prepareBottomBar()
         prepareImageCard()
-
-        
     }
     
     func prepareDateFormatter() {
@@ -44,29 +48,30 @@ class DashboardWelcomeTableViewCell: UITableViewCell {
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
     }
-    
-    func prepareDateLabel() {
-        dateLabel = UILabel()
-        dateLabel.font = RobotoFont.regular(with: 12)
-        dateLabel.textColor = Colors.background
-        dateLabel.text = dateFormatter.string(from: Date.distantFuture)
-    }
-    
+
     func prepareToolbar() {
         toolbar = Toolbar(rightViews: [])
         
-        toolbar.title = "Hello Karol!"
+        toolbar.title = "Hello \(user!.name)!"
         toolbar.titleLabel.textAlignment = .left
         
-        toolbar.detail = "You have one event today"
+        toolbar.detail = appointments.count == 1 ? "You have 1 appointment today." : "You have \(appointments.count) appointments today."
         toolbar.detailLabel.textAlignment = .left
         toolbar.detailLabel.textColor = Colors.accent
+    }
+    
+    func prepareContentViewLabel() {
+        contentViewLabel = UILabel()
+        contentViewLabel.numberOfLines = 0
+        contentViewLabel.text = "It's \(NSDate().string(with: .longTimeAndDate))"
+        contentViewLabel.textAlignment = .center
+        contentViewLabel.font = RobotoFont.light(with: 16)
     }
     
     
     func prepareBottomBar() {
         bottomBar = Bar()
-        bottomBar.leftViews = [dateLabel]
+//        bottomBar.leftViews = [dateLabel]
 //        bottomBar.rightViews = [moreButton]
     }
     
@@ -74,11 +79,13 @@ class DashboardWelcomeTableViewCell: UITableViewCell {
         
         cardView.toolbar = toolbar
         cardView.toolbarEdgeInsetsPreset = .square2
-        cardView.toolbarEdgeInsets.bottom = -8
-        cardView.toolbarEdgeInsets.right = 8
+        cardView.toolbarEdgeInsets.bottom = 0
+
+        cardView.contentView = contentViewLabel
+        cardView.contentViewEdgeInsetsPreset = .square2
         
-        cardView.bottomBar = bottomBar
-        cardView.bottomBarEdgeInsetsPreset = .wideRectangle2
+//        cardView.bottomBar = bottomBar
+//        cardView.bottomBarEdgeInsetsPreset = .wideRectangle2
         
         layout(cardView).horizontally(left: 20, right: 20).center()
     }

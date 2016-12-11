@@ -15,27 +15,27 @@ class DashboardTableViewCell: UITableViewCell {
     
      var toolbar: Toolbar!
      var moreButton: IconButton!
-    
      var contentViewLabel: UILabel!
-    
      var bottomBar: Bar!
      var dateFormatter: DateFormatter!
      var dateLabel: UILabel!
      var favoriteButton: IconButton!
+     var appointment: Appointment?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = Colors.primary
-        
+    }
+    
+    func configure(forAppointment appointment: Appointment) {
+        self.appointment = appointment
         prepareDateFormatter()
         prepareDateLabel()
-        prepareFavoriteButton()
         prepareMoreButton()
         prepareToolbar()
         prepareContentViewLabel()
         prepareBottomBar()
         prepareImageCard()
-        
     }
     
      func prepareDateFormatter() {
@@ -51,11 +51,6 @@ class DashboardTableViewCell: UITableViewCell {
         dateLabel.text = dateFormatter.string(from: Date.distantFuture)
     }
     
-     func prepareFavoriteButton() {
-        favoriteButton = IconButton(image: Icon.favorite, tintColor: Color.red.base)
-//        favoriteButton.sendAction(<#T##action: Selector##Selector#>, to: <#T##Any?#>, for: <#T##UIEvent?#>)
-    }
-    
      func prepareMoreButton() {
         moreButton = IconButton(image: Icon.cm.moreHorizontal, tintColor: Color.blueGrey.base)
     }
@@ -63,10 +58,10 @@ class DashboardTableViewCell: UITableViewCell {
      func prepareToolbar() {
         toolbar = Toolbar(rightViews: [])
         
-        toolbar.title = "John Travolta"
+        toolbar.title = appointment?.registrant?.name
         toolbar.titleLabel.textAlignment = .left
         
-        toolbar.detail = "Consultation"
+        toolbar.detail = appointment?.visitType?.name
         toolbar.detailLabel.textAlignment = .left
         toolbar.detailLabel.textColor = Colors.accent
     }
@@ -74,7 +69,7 @@ class DashboardTableViewCell: UITableViewCell {
      func prepareContentViewLabel() {
         contentViewLabel = UILabel()
         contentViewLabel.numberOfLines = 0
-        contentViewLabel.text = "10:30 - 12:00"
+        contentViewLabel.text = "\(appointment!.date.string(with: .shortTime)) - \(appointment!.date.addingTimeInterval(TimeInterval(((appointment!.visitType!.duration)*3600))).string(with: .shortTime))"
         contentViewLabel.textAlignment = .center
         contentViewLabel.font = RobotoFont.light(with: 16)
     }

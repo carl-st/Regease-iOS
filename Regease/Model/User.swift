@@ -12,6 +12,8 @@ import ObjectMapper
 class User: Object, Mappable {
     dynamic var id = 0
     dynamic var username = ""
+    dynamic var name = ""
+    dynamic var surname = ""
     dynamic var email = ""
     
     override static func primaryKey() -> String? {
@@ -31,6 +33,8 @@ class User: Object, Mappable {
             id <- map["id"]
         }
         username <- map["username"]
+        name <- map["name"]
+        surname <- map["surname"]
         email <- map["email"]
     }
     

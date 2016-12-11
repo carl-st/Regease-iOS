@@ -13,7 +13,7 @@ class VisitType: Object, Mappable {
     dynamic var id = ""
     dynamic var typeDescription = ""
     dynamic var name = ""
-    dynamic var duration = 0
+    dynamic var duration = 0.0
     dynamic var business: Business?
 
     
