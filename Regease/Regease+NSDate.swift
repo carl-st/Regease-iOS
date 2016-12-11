@@ -10,6 +10,19 @@ import Foundation
 
 extension NSDate {
     
+    var startOfDay: Date {
+        return NSCalendar.current.startOfDay(for: self as Date)
+        
+    }
+    
+    var endOfDay: NSDate? {
+        var components = DateComponents()
+        components.day = 1
+        components.second = -1
+        let end = NSCalendar.current.date(byAdding: components, to: startOfDay)!
+        return end as NSDate
+    }
+    
     /// Prints a string representation for the date with the given formatter
     func string(with format: DateFormatter) -> String {
         return format.string(from: self as Date)

@@ -50,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xYS-YV-6g0" customClass="TextField" customModule="Material">
-                                <rect key="frame" x="30" y="262" width="315" height="30"/>
+                                <rect key="frame" x="30" y="282" width="315" height="30"/>
                                 <color key="tintColor" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="5sE-gK-Sc9"/>
@@ -76,7 +76,7 @@
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0XE-Gp-r3G" customClass="TextField" customModule="Material">
-                                <rect key="frame" x="30" y="212" width="315" height="30"/>
+                                <rect key="frame" x="30" y="232" width="315" height="30"/>
                                 <color key="tintColor" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="jWC-oE-tOS">
@@ -105,7 +105,7 @@
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LS-xP-vZp" customClass="RaisedButton" customModule="Material">
-                                <rect key="frame" x="133" y="312" width="109" height="35"/>
+                                <rect key="frame" x="133" y="332" width="109" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="0dR-GC-THm"/>
                                     <constraint firstAttribute="width" constant="109" id="RgK-Cy-Xjf"/>
@@ -148,7 +148,7 @@
                             <constraint firstItem="xYS-YV-6g0" firstAttribute="top" secondItem="0XE-Gp-r3G" secondAttribute="bottom" constant="20" id="RvC-Lv-quj"/>
                             <constraint firstItem="hGv-nh-qJE" firstAttribute="top" secondItem="XfG-6G-tg9" secondAttribute="bottom" constant="20" id="cKk-6n-h2n"/>
                             <constraint firstItem="8LS-xP-vZp" firstAttribute="top" secondItem="xYS-YV-6g0" secondAttribute="bottom" constant="20" id="gMJ-yU-kw3"/>
-                            <constraint firstItem="0XE-Gp-r3G" firstAttribute="top" secondItem="fOx-4K-O4N" secondAttribute="bottom" constant="20" id="svc-G8-LhD"/>
+                            <constraint firstItem="0XE-Gp-r3G" firstAttribute="top" secondItem="fOx-4K-O4N" secondAttribute="bottom" constant="40" id="svc-G8-LhD"/>
                             <constraint firstItem="8LS-xP-vZp" firstAttribute="centerX" secondItem="LVR-ND-ZxR" secondAttribute="centerX" id="tL5-uF-0TM"/>
                             <constraint firstItem="fOx-4K-O4N" firstAttribute="top" secondItem="hGv-nh-qJE" secondAttribute="bottom" constant="20" id="tUG-bz-riQ"/>
                             <constraint firstItem="xYS-YV-6g0" firstAttribute="centerX" secondItem="LVR-ND-ZxR" secondAttribute="centerX" id="zCl-Z3-aRn"/>
@@ -169,7 +169,7 @@
             <objects>
                 <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="i5e-y9-eNv" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8Ul-aq-Gf7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="8Ul-aq-Gf7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

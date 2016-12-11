@@ -21,4 +21,11 @@ extension DateFormatter {
         formatter.timeStyle = .short
         return formatter
     }()
+    
+    @nonobjc static let longTimeAndDate: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        return formatter
+    }()
 }

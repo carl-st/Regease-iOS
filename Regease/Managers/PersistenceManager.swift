@@ -68,8 +68,7 @@ class PersistenceManager: RegistrationPersistenceProtocol {
     }
     
     func appointments(forDate date: NSDate) -> Results<Appointment> {
-        let nextDay = date.addingTimeInterval(60*60*24)
-        return realm.objects(Appointment.self).filter("date > %@ && date <= %@", date, nextDay)
+        return realm.objects(Appointment.self).filter("date > %@ && date <= %@", date, date.endOfDay!)
     }
     
     func settingForKey(key: String) -> Setting? {
