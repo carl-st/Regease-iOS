@@ -14,7 +14,7 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
 
         CalendarServices.sharedInstance.getAppointments(completion: {_, _ -> Void in})
-        CalendarServices.sharedInstance.getSetting(forKey: Settings.WorkingDays, completion: {_, _ -> Void in})
+        CalendarServices.sharedInstance.getCalendar(completion: {_, _ -> Void in})
     }
 
 

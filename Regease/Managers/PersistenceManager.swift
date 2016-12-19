@@ -71,8 +71,8 @@ class PersistenceManager: RegistrationPersistenceProtocol {
         return realm.objects(Appointment.self).filter("date > %@ && date <= %@", date, date.endOfDay!)
     }
     
-    func settingForKey(key: String) -> Setting? {
-        return realm.object(ofType: Setting.self, forPrimaryKey: key)
+    func calendar() -> CalendarSettings? {
+        return realm.objects(CalendarSettings.self).first
     }
     
     func delete(_ realm: Realm) {

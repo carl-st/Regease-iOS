@@ -19,7 +19,7 @@ class CalendarServices: Service {
     
     enum Path: String {
         case Appointment = "appointment"
-        case Setting = "setting"
+        case Setting = "calendar"
     }
     
     func getAppointments(completion: @escaping (Bool, Any) -> Void) {
@@ -38,10 +38,10 @@ class CalendarServices: Service {
             })
     }
     
-    func getSetting(forKey key: String, completion: @escaping (Bool, Any) -> Void) {
-        Alamofire.request(Urls.baseUrl + Path.Setting.rawValue, method: .get, parameters: ["key": key], headers: self.headers).validate()
+    func getCalendar(completion: @escaping (Bool, Any) -> Void) {
+        Alamofire.request(Urls.baseUrl + Path.Setting.rawValue, method: .get, parameters: nil, headers: self.headers).validate()
             .responseObject(completionHandler: {
-                (response: DataResponse<Setting>) in
+                (response: DataResponse<CalendarSettings>) in
                 switch response.result {
                 case .success(let setting):
                     print(setting)
