@@ -284,7 +284,7 @@
         <!--Details-->
         <scene sceneID="aBj-1t-W9O">
             <objects>
-                <viewController storyboardIdentifier="DetailsViewController" title="Details" id="jnS-bG-Jjo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" title="Details" id="jnS-bG-Jjo" customClass="AppointmentDetailsViewController" customModule="Regease" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F7b-iW-tnv"/>
                         <viewControllerLayoutGuide type="bottom" id="CYS-7W-Wez"/>
@@ -303,7 +303,6 @@
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="disabled" backgroundImage="YellowButton"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
                                         <color key="value" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -323,6 +322,9 @@
                                         <include reference="2Hl-Ut-qlJ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="editAction:" destination="jnS-bG-Jjo" eventType="touchUpInside" id="A49-tb-JAM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Db-R1-84K" customClass="RaisedButton" customModule="Material">
                                 <rect key="frame" x="191.5" y="499" width="167.5" height="35"/>
@@ -334,10 +336,9 @@
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="disabled" backgroundImage="YellowButton"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                        <color key="value" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.99856823679999995" green="0.32270258670000002" blue="0.32296496629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Cancel"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
@@ -354,6 +355,9 @@
                                         <include reference="04q-Sf-A2w"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="cancelAction:" destination="jnS-bG-Jjo" eventType="touchUpInside" id="i49-z8-vbC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Travolta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCl-qb-cYm">
                                 <rect key="frame" x="16" y="20" width="343" height="24"/>
@@ -372,11 +376,13 @@
                                 <color key="textColor" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 10:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tY1-Kj-kUK">
-                                <rect key="frame" x="16" y="259" width="343" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tY1-Kj-kUK">
+                                <rect key="frame" x="16" y="227" width="343" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="0bi-Cj-tSU"/>
+                                    <constraint firstAttribute="height" constant="100" id="0bi-Cj-tSU"/>
                                 </constraints>
+                                <string key="text">November 6,
+10:00 - 10:30</string>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -400,6 +406,11 @@
                             <constraint firstItem="CYS-7W-Wez" firstAttribute="top" secondItem="1Db-R1-84K" secondAttribute="bottom" constant="20" id="prT-of-nc2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="tY1-Kj-kUK" id="pcA-DD-DkG"/>
+                        <outlet property="nameLabel" destination="mCl-qb-cYm" id="BV8-QO-m5X"/>
+                        <outlet property="visitTypeLabel" destination="F79-ih-m1A" id="w9f-Op-J8c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zzg-rc-o12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -604,7 +615,6 @@
         <image name="Calendar" width="18" height="20"/>
         <image name="Dashboard" width="19" height="18"/>
         <image name="Settings" width="20" height="20"/>
-        <image name="YellowButton" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pJP-aZ-y00"/>

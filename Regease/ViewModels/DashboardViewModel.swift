@@ -31,6 +31,7 @@ class DashboardViewModel {
             guard let reload = reload else { return }
             switch changes {
             case .initial:
+                reload()
                 break
             case .update(_, _, _, _):
                 reload()

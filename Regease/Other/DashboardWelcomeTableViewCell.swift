@@ -63,7 +63,7 @@ class DashboardWelcomeTableViewCell: UITableViewCell {
     func prepareContentViewLabel() {
         contentViewLabel = UILabel()
         contentViewLabel.numberOfLines = 0
-        contentViewLabel.text = "It's \(NSDate().string(with: .longTimeAndDate))"
+        contentViewLabel.text = "It's \(NSDate().string(with: .longDate))"
         contentViewLabel.textAlignment = .center
         contentViewLabel.font = RobotoFont.light(with: 16)
     }

@@ -18,6 +18,8 @@
 		F938CBF31DFAE21B004E1E3D /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F938CBF21DFAE21B004E1E3D /* DashboardTableViewCell.swift */; };
 		F938CBF51DFB2099004E1E3D /* DashboardWelcomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F938CBF41DFB2099004E1E3D /* DashboardWelcomeTableViewCell.swift */; };
 		F96884181E07FC5A00B6BDAB /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96884171E07FC5A00B6BDAB /* Calendar.swift */; };
+		F968841A1E08069100B6BDAB /* AppointmentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96884191E08069100B6BDAB /* AppointmentDetailsViewController.swift */; };
+		F968841C1E0806A800B6BDAB /* AppointmentDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F968841B1E0806A800B6BDAB /* AppointmentDetailsViewModel.swift */; };
 		F96A53241DEE028D0093761E /* CalendarDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96A53231DEE028D0093761E /* CalendarDateCell.xib */; };
 		F96A53261DEE03470093761E /* CalendarDateCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A53251DEE03470093761E /* CalendarDateCellView.swift */; };
 		F96DB4C61DECD8EE00E1CE38 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DB4C51DECD8ED00E1CE38 /* AuthServices.swift */; };
@@ -139,6 +141,8 @@
 		F938CBF21DFAE21B004E1E3D /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardTableViewCell.swift; path = Other/DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		F938CBF41DFB2099004E1E3D /* DashboardWelcomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardWelcomeTableViewCell.swift; path = Other/DashboardWelcomeTableViewCell.swift; sourceTree = "<group>"; };
 		F96884171E07FC5A00B6BDAB /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Calendar.swift; path = Model/Calendar.swift; sourceTree = "<group>"; };
+		F96884191E08069100B6BDAB /* AppointmentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentDetailsViewController.swift; path = ViewControllers/AppointmentDetailsViewController.swift; sourceTree = "<group>"; };
+		F968841B1E0806A800B6BDAB /* AppointmentDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentDetailsViewModel.swift; path = ViewModels/AppointmentDetailsViewModel.swift; sourceTree = "<group>"; };
 		F96A53231DEE028D0093761E /* CalendarDateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendarDateCell.xib; path = Other/CalendarDateCell.xib; sourceTree = "<group>"; };
 		F96A53251DEE03470093761E /* CalendarDateCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarDateCellView.swift; path = Other/CalendarDateCellView.swift; sourceTree = "<group>"; };
 		F96DB4C51DECD8ED00E1CE38 /* AuthServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthServices.swift; path = Services/AuthServices.swift; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 				F92658EE1DF7104100EA8598 /* Calendar */,
 				F9D534591DEB355E009064A1 /* DashboardViewController.swift */,
 				F9745F211DECD33C00F2F7A7 /* SettingsTableViewController.swift */,
+				F96884191E08069100B6BDAB /* AppointmentDetailsViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -433,6 +438,7 @@
 			children = (
 				F96DB4C71DECD98800E1CE38 /* DashboardViewModel.swift */,
 				F96DB4C91DECD9BD00E1CE38 /* CalendarViewModel.swift */,
+				F968841B1E0806A800B6BDAB /* AppointmentDetailsViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -833,12 +839,14 @@
 				F9F3E8991DEF1E7F0011F8F4 /* Appointment.swift in Sources */,
 				F9F4EDAD1DECF39900117C3A /* CalendarServices.swift in Sources */,
 				F9745F241DECD73100F2F7A7 /* UIConstants.swift in Sources */,
+				F968841A1E08069100B6BDAB /* AppointmentDetailsViewController.swift in Sources */,
 				F92658F01DF7106400EA8598 /* CalendarHeader.swift in Sources */,
 				F96DB4C81DECD98800E1CE38 /* DashboardViewModel.swift in Sources */,
 				F9F3E8951DEEF1890011F8F4 /* Regease+UIFont.swift in Sources */,
 				F9F3E89D1DEF24370011F8F4 /* VisitType.swift in Sources */,
 				F938CBF31DFAE21B004E1E3D /* DashboardTableViewCell.swift in Sources */,
 				F9F3E8931DEEF0F60011F8F4 /* Appearance.swift in Sources */,
+				F968841C1E0806A800B6BDAB /* AppointmentDetailsViewModel.swift in Sources */,
 				F9D534581DEB355E009064A1 /* AppDelegate.swift in Sources */,
 				F9F3E89F1DEF27260011F8F4 /* Business.swift in Sources */,
 				F9D5345A1DEB355E009064A1 /* DashboardViewController.swift in Sources */,

@@ -12,6 +12,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
 
     @IBOutlet weak var tableView: UITableView!
     var dashboardViewModel: DashboardViewModel?
+    var selectedAppointmentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,9 +49,21 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellReuseIdentifier.DashboardCell.rawValue) as? DashboardTableViewCell
             if let viewModel = dashboardViewModel {
-                cell?.configure(forAppointment: viewModel.appointments[indexPath.row - 1])
+                cell?.configure(forAppointment: viewModel.appointments[indexPath.row - 1], buttonAction: {
+                    self.selectedAppointmentIndex = indexPath.row - 1
+                    self.performSegue(withIdentifier: SegueIdentifier.showDetails.rawValue, sender: self)
+                })
             }
             return cell!
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifier.showDetails.rawValue {
+            let vc = segue.destination as? AppointmentDetailsViewController
+            if let viewModel = dashboardViewModel {
+                vc?.detailsViewModel = AppointmentDetailsViewModel(appointment: viewModel.appointments[selectedAppointmentIndex])
+            }
         }
     }
 

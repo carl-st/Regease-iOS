@@ -21,14 +21,16 @@ class DashboardTableViewCell: UITableViewCell {
      var dateLabel: UILabel!
      var favoriteButton: IconButton!
      var appointment: Appointment?
+     var buttonAction: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = Colors.primary
     }
     
-    func configure(forAppointment appointment: Appointment) {
+    func configure(forAppointment appointment: Appointment, buttonAction: (() -> Void)? = nil) {
         self.appointment = appointment
+        self.buttonAction = buttonAction
         prepareDateFormatter()
         prepareDateLabel()
         prepareMoreButton()
@@ -53,6 +55,11 @@ class DashboardTableViewCell: UITableViewCell {
     
      func prepareMoreButton() {
         moreButton = IconButton(image: Icon.cm.moreHorizontal, tintColor: Color.blueGrey.base)
+        moreButton.addTarget(self, action: #selector(moreButtonAction), for: .touchUpInside)
+    }
+    
+    func moreButtonAction() {
+        buttonAction!()
     }
     
      func prepareToolbar() {
