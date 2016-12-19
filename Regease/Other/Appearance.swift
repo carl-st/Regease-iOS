@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import Material
 
 extension AppDelegate {
     
     func applyAppearance() {
+        let backArrowImage = Icon.arrowBack
+        UINavigationBar.appearance().backIndicatorImage = backArrowImage
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backArrowImage
+        UINavigationBar.appearance().backItem?.title = ""
+        
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(style: .Light, size: 20),
                                                             NSForegroundColorAttributeName: Colors.background]
+        UINavigationBar.appearance().tintColor = Colors.background
         UIBarButtonItem.appearance().tintColor = Colors.accent
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -200), for: UIBarMetrics.default)
     }
     
 }

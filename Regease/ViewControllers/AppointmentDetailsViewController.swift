@@ -13,6 +13,7 @@ class AppointmentDetailsViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var visitTypeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     var detailsViewModel: AppointmentDetailsViewModel?
     
@@ -22,6 +23,7 @@ class AppointmentDetailsViewController: UIViewController {
             self.nameLabel.text = viewModel.nameText
             self.visitTypeLabel.text = viewModel.visitTypeText
             self.dateLabel.text = viewModel.dateText
+            self.emailLabel.text = viewModel.emailText
         }
     }
 

@@ -76,7 +76,7 @@ class DashboardTableViewCell: UITableViewCell {
      func prepareContentViewLabel() {
         contentViewLabel = UILabel()
         contentViewLabel.numberOfLines = 0
-        contentViewLabel.text = "\(appointment!.date.string(with: .shortTime)) - \(appointment!.date.addingTimeInterval(TimeInterval(((appointment!.visitType!.duration)*3600))).string(with: .shortTime))"
+        contentViewLabel.text = "\(appointment!.date.string(with: .shortTime)) - \(appointment!.date.addingTimeInterval(TimeInterval((appointment!.visitType!.duration))).string(with: .shortTime))"
         contentViewLabel.textAlignment = .center
         contentViewLabel.font = RobotoFont.light(with: 16)
     }

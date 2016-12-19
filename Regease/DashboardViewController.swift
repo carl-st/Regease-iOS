@@ -19,6 +19,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.dashboardViewModel = DashboardViewModel(reload: { () -> Void in
             self.tableView.reloadData()
         }, persistence: PersistenceManager.sharedInstance)
+        self.tableView.reloadData()
     }
 
     // TableView Delegates

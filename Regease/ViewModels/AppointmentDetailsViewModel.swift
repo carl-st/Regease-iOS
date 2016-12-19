@@ -13,16 +13,18 @@ class AppointmentDetailsViewModel {
     var nameText = ""
     var dateText = ""
     var visitTypeText = ""
+    var emailText = ""
     var appointment: Appointment?
     
     init(appointment: Appointment) {
         self.appointment = appointment
         if let registrant = appointment.registrant {
             self.nameText = registrant.name
+            self.emailText = registrant.email
         }
-        self.dateText = appointment.date.string(with: .longTimeAndDate)
+        self.dateText = "This appointment is set for\n\(appointment.date.string(with: .longTimeAndDate))"
         if let visitType = appointment.visitType {
-            self.visitTypeText = "This appointment is set for\n\(visitType.name)"
+            self.visitTypeText = visitType.name
         }
     }
 
