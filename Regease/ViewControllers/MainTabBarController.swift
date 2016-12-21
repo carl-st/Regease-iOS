@@ -12,8 +12,6 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        CalendarServices.sharedInstance.getAppointments(completion: {_, _ -> Void in})
         CalendarServices.sharedInstance.getCalendar(completion: {_, _ -> Void in})
     }
 

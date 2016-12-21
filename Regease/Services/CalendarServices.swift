@@ -29,7 +29,7 @@ class CalendarServices: Service {
                 switch response.result {
                 case .success(let appointments):
                     print(appointments)
-                    self.persistanceManager.createOrUpdate(appointments)
+                    self.persistanceManager.createOrUpdateAndRemoveDeleted(appointments)
                     completion(true, appointments)
                 case .failure(let error):
                     print(error)
@@ -52,5 +52,43 @@ class CalendarServices: Service {
                     completion(false, error)
                 }
             })
+    }
+    
+    func updateCalendar(calendarId: String, parameters: Parameters, completion: @escaping (Bool, Any) -> Void) {
+        Alamofire.request(Urls.baseUrl + Path.Setting.rawValue + "?id=\(calendarId)", method: .put, parameters: parameters, headers: self.headers).validate()
+            .responseObject(completionHandler: {
+                (response: DataResponse<CalendarSettings>) in
+                switch response.result {
+                case .success(let setting):
+                    print(setting)
+                    self.persistanceManager.createOrUpdate(setting)
+                    completion(true, setting)
+                case .failure(let error):
+                    print(error)
+                    completion(false, error)
+                }
+            })
+    }
+    
+    func updateAppointment(appointmentId: String, parameters: Parameters, completion: @escaping (Bool, Any) -> Void) {
+        Alamofire.request(Urls.baseUrl + Path.Appointment.rawValue + "?id=\(appointmentId)", method: .put, parameters: parameters, headers: self.headers).validate()
+            .responseArray(completionHandler: {
+                (response: DataResponse<[Appointment]>) in
+                switch response.result {
+                case .success(let appointments):
+                    print(appointments)
+                    self.persistanceManager.createOrUpdate(appointments)
+                    completion(true, appointments)
+                case .failure(let error):
+                    print(error)
+                    completion(false, error)
+                }
+            })
+    }
+    
+    func cancelAppointment(appointmentId: String, completion: @escaping (Bool, Any) -> Void) {
+        let parameters: Parameters = ["id": appointmentId]
+        Alamofire.request(Urls.baseUrl + Path.Appointment.rawValue, method: .delete, parameters: parameters, encoding: URLEncoding.default, headers: self.headers).validate()
+                .completion(completion: completion)
     }
 }

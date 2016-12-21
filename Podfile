@@ -19,6 +19,9 @@ target 'Regease' do
   pod 'RxAlamofire'
   pod 'JTAppleCalendar', '~> 6.0'
   pod 'Material', '~> 2.0'
+  pod 'SIAlertView'
+  pod 'ActionSheetPicker-3.0'
+  pod 'NVActivityIndicatorView'
 
   target 'RegeaseTests' do
     inherit! :search_paths

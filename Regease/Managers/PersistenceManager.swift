@@ -59,6 +59,22 @@ class PersistenceManager: RegistrationPersistenceProtocol {
         }
     }
 
+    func createOrUpdateAndRemoveDeleted<T: Object>(_ array: [T]) {
+        realm.beginWrite()
+        realm.delete(realm.objects(Appointment.self))
+        try! realm.commitWrite()
+        createOrUpdate(array, realm: realm)
+//        realm.beginWrite()
+//        let oldIds: NSMutableArray = realm.objects(Appointment.self).value(forKeyPath: "id") as! NSMutableArray
+//        for object in array {
+//            oldIds.remove(object.value(forKeyPath: "id")!)
+//        }
+//        let oldObjects = realm.objects(T.self).filter("id IN %@", oldIds)
+//        print("Old objects: \(oldObjects)")
+//        realm.delete(oldObjects)
+//        try! realm.commitWrite()
+    }
+
     func visitType(forId id: String) -> VisitType? {
         return realm.object(ofType: VisitType.self, forPrimaryKey: id)
     }

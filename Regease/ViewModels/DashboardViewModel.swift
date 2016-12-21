@@ -28,12 +28,14 @@ class DashboardViewModel {
         let realm = try! Realm()
         let results = realm.objects(Appointment.self)
         appointmentsNotificationToken = results.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
-            guard let reload = reload else { return }
+            guard let reload = reload else {
+                return
+            }
             switch changes {
             case .initial:
-                reload()
                 break
             case .update(_, _, _, _):
+                self?.appointments = Array(persistence.appointments(forDate: NSDate()))
                 reload()
                 break
             case .error(let error):
@@ -41,7 +43,6 @@ class DashboardViewModel {
                 break
             }
         }
-    
     }
     
     deinit {

@@ -93,6 +93,7 @@
 		F9D534641DEB355E009064A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D534621DEB355E009064A1 /* LaunchScreen.storyboard */; };
 		F9D5346F1DEB355E009064A1 /* RegeaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5346E1DEB355E009064A1 /* RegeaseTests.swift */; };
 		F9D5347A1DEB355E009064A1 /* RegeaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D534791DEB355E009064A1 /* RegeaseUITests.swift */; };
+		F9DA19421E09EE9D003FF1A6 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DA19411E09EE9D003FF1A6 /* AlertView.swift */; };
 		F9F3E8931DEEF0F60011F8F4 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3E8921DEEF0F60011F8F4 /* Appearance.swift */; };
 		F9F3E8951DEEF1890011F8F4 /* Regease+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3E8941DEEF1890011F8F4 /* Regease+UIFont.swift */; };
 		F9F3E8971DEF03800011F8F4 /* Regease+DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3E8961DEF03800011F8F4 /* Regease+DataRequest.swift */; };
@@ -190,6 +191,7 @@
 		F9D534751DEB355E009064A1 /* RegeaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RegeaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D534791DEB355E009064A1 /* RegeaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegeaseUITests.swift; sourceTree = "<group>"; };
 		F9D5347B1DEB355E009064A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9DA19411E09EE9D003FF1A6 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertView.swift; path = Other/AlertView.swift; sourceTree = "<group>"; };
 		F9F3E8921DEEF0F60011F8F4 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Appearance.swift; path = Other/Appearance.swift; sourceTree = "<group>"; };
 		F9F3E8941DEEF1890011F8F4 /* Regease+UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Regease+UIFont.swift"; sourceTree = "<group>"; };
 		F9F3E8961DEF03800011F8F4 /* Regease+DataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Regease+DataRequest.swift"; path = "Other/Regease+DataRequest.swift"; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				F9B390271DEDCA37000FE192 /* Fonts */,
 				F9745F1E1DECCD4300F2F7A7 /* GlobalConstants.swift */,
 				F9745F231DECD73100F2F7A7 /* UIConstants.swift */,
+				F9DA19411E09EE9D003FF1A6 /* AlertView.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				F9D534721DEB355E009064A1 /* Frameworks */,
 				F9D534731DEB355E009064A1 /* Resources */,
 				8AD6B94F2FE62C9242880BB4 /* [CP] Copy Pods Resources */,
+				4332A88E5EC1BC20654B6F95 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -689,7 +693,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		1DE55D81F69D083A7381DF10 /* [CP] Check Pods Manifest.lock */ = {
@@ -704,7 +708,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		397147C1EFE312A84633F0FD /* [CP] Copy Pods Resources */ = {
@@ -720,6 +724,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Regease/Pods-Regease-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4332A88E5EC1BC20654B6F95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RegeaseUITests/Pods-RegeaseUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8AD6B94F2FE62C9242880BB4 /* [CP] Copy Pods Resources */ = {
@@ -793,7 +812,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FD0B9584957EE5A6E16219CF /* [CP] Embed Pods Frameworks */ = {
@@ -851,6 +870,7 @@
 				F9F3E89F1DEF27260011F8F4 /* Business.swift in Sources */,
 				F9D5345A1DEB355E009064A1 /* DashboardViewController.swift in Sources */,
 				F9B3906F1DEDE4F3000FE192 /* MainTabBarController.swift in Sources */,
+				F9DA19421E09EE9D003FF1A6 /* AlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

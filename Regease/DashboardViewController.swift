@@ -18,8 +18,13 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         self.dashboardViewModel = DashboardViewModel(reload: { () -> Void in
             self.tableView.reloadData()
+            print("tableView reloaded")
         }, persistence: PersistenceManager.sharedInstance)
         self.tableView.reloadData()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        CalendarServices.sharedInstance.getAppointments(completion: {_, _ -> Void in})
     }
 
     // TableView Delegates

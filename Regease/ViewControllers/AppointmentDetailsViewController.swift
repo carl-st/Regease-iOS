@@ -32,7 +32,23 @@ class AppointmentDetailsViewController: UIViewController {
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        
+        AlertView(title: "Cancel appointment", message: "Are you sure you want to cancel this meeting?", actionButtonTitle: "Yes", cancelButtonTitle: "No", actionCompletion: {
+            Void in
+            if let viewModel = self.detailsViewModel {
+                CalendarServices.sharedInstance.cancelAppointment(appointmentId: viewModel.appointment!.id, completion: {
+                    success, data in
+                        if success {
+                            self.navigationController?.popViewController(animated: true)
+                        } else {
+                            let error = data as! Error
+                            AlertView(title: "Error", message: error.localizedDescription, cancelButtonTitle: "OK").show()
+                        }
+                })
+            }
+        }, cancelCompletion: {
+            Void in
+            print("dismissed")
+        }).show()
     }
     
 }

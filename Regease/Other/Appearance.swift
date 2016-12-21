@@ -8,6 +8,7 @@
 
 import UIKit
 import Material
+import ActionSheetPicker_3_0
 
 extension AppDelegate {
     
@@ -22,6 +23,22 @@ extension AppDelegate {
         UINavigationBar.appearance().tintColor = Colors.background
         UIBarButtonItem.appearance().tintColor = Colors.accent
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -200), for: UIBarMetrics.default)
+    }
+    
+}
+
+extension ActionSheetDatePicker {
+    
+    func applyPickerStyling(title: String) {
+        setTextColor(Colors.background)
+        attributedTitle = NSAttributedString(string: title, attributes: [NSFontAttributeName: UIFont(style: .Light, size: 20),
+                                                                         NSForegroundColorAttributeName: Colors.background])
+        
+        let doneButton = UIBarButtonItem(image: Icon.check, style: .plain, target: nil, action: nil)
+        setDoneButton(doneButton)
+        
+        let cancelButton = UIBarButtonItem(image: Icon.close, style: .plain, target: nil, action: nil)
+        setCancelButton(cancelButton)
     }
     
 }
