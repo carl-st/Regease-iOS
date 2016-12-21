@@ -12,9 +12,9 @@ public enum NavigationControllerStoryboardIdentifier : String {
     case LoginNavigationController
 }
 
-//public enum SegueIdentifier : String {
-//    case
-//}
+public enum SegueIdentifier : String {
+    case showDetails
+}
 
 public enum StoryboardNames : String {
     case Login

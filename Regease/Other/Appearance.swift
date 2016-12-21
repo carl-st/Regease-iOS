@@ -7,16 +7,42 @@
 //
 
 import UIKit
+import Material
+import ActionSheetPicker_3_0
 
 extension AppDelegate {
     
     func applyAppearance() {
+        let backArrowImage = Icon.arrowBack
+        UINavigationBar.appearance().backIndicatorImage = backArrowImage
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backArrowImage
+        UINavigationBar.appearance().backItem?.title = ""
+        
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(style: .Light, size: 20),
                                                             NSForegroundColorAttributeName: Colors.background]
+        UINavigationBar.appearance().tintColor = Colors.background
         UIBarButtonItem.appearance().tintColor = Colors.accent
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -200), for: UIBarMetrics.default)
     }
     
 }
+
+extension AbstractActionSheetPicker {
+    
+    func applyPickerStyling(title: String) {
+        setTextColor(Colors.background)
+        attributedTitle = NSAttributedString(string: title, attributes: [NSFontAttributeName: UIFont(style: .Light, size: 20),
+                                                                         NSForegroundColorAttributeName: Colors.background])
+        
+        let doneButton = UIBarButtonItem(image: Icon.check, style: .plain, target: nil, action: nil)
+        setDoneButton(doneButton)
+        
+        let cancelButton = UIBarButtonItem(image: Icon.close, style: .plain, target: nil, action: nil)
+        setCancelButton(cancelButton)
+    }
+    
+}
+
 
 struct Colors {
     static let primary = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0) // Grey 200

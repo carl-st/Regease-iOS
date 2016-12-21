@@ -21,14 +21,16 @@ class DashboardTableViewCell: UITableViewCell {
      var dateLabel: UILabel!
      var favoriteButton: IconButton!
      var appointment: Appointment?
+     var buttonAction: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = Colors.primary
     }
     
-    func configure(forAppointment appointment: Appointment) {
+    func configure(forAppointment appointment: Appointment, buttonAction: (() -> Void)? = nil) {
         self.appointment = appointment
+        self.buttonAction = buttonAction
         prepareDateFormatter()
         prepareDateLabel()
         prepareMoreButton()
@@ -53,6 +55,11 @@ class DashboardTableViewCell: UITableViewCell {
     
      func prepareMoreButton() {
         moreButton = IconButton(image: Icon.cm.moreHorizontal, tintColor: Color.blueGrey.base)
+        moreButton.addTarget(self, action: #selector(moreButtonAction), for: .touchUpInside)
+    }
+    
+    func moreButtonAction() {
+        buttonAction!()
     }
     
      func prepareToolbar() {
@@ -69,7 +76,7 @@ class DashboardTableViewCell: UITableViewCell {
      func prepareContentViewLabel() {
         contentViewLabel = UILabel()
         contentViewLabel.numberOfLines = 0
-        contentViewLabel.text = "\(appointment!.date.string(with: .shortTime)) - \(appointment!.date.addingTimeInterval(TimeInterval(((appointment!.visitType!.duration)*3600))).string(with: .shortTime))"
+        contentViewLabel.text = "\(appointment!.date.string(with: .shortTime)) - \(appointment!.date.addingTimeInterval(TimeInterval((appointment!.visitType!.duration))).string(with: .shortTime))"
         contentViewLabel.textAlignment = .center
         contentViewLabel.font = RobotoFont.light(with: 16)
     }

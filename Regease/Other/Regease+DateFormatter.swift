@@ -22,10 +22,17 @@ extension DateFormatter {
         return formatter
     }()
     
-    @nonobjc static let longTimeAndDate: DateFormatter = {
+    @nonobjc static let longDate: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .none
+        return formatter
+    }()
+    
+    @nonobjc static let longTimeAndDate: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .short
         return formatter
     }()
 }

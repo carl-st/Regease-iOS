@@ -19,7 +19,7 @@ class CalendarServices: Service {
     
     enum Path: String {
         case Appointment = "appointment"
-        case Setting = "setting"
+        case Setting = "calendar"
     }
     
     func getAppointments(completion: @escaping (Bool, Any) -> Void) {
@@ -29,7 +29,7 @@ class CalendarServices: Service {
                 switch response.result {
                 case .success(let appointments):
                     print(appointments)
-                    self.persistanceManager.createOrUpdate(appointments)
+                    self.persistanceManager.createOrUpdateAndRemoveDeleted(appointments)
                     completion(true, appointments)
                 case .failure(let error):
                     print(error)
@@ -38,10 +38,10 @@ class CalendarServices: Service {
             })
     }
     
-    func getSetting(forKey key: String, completion: @escaping (Bool, Any) -> Void) {
-        Alamofire.request(Urls.baseUrl + Path.Setting.rawValue, method: .get, parameters: ["key": key], headers: self.headers).validate()
+    func getCalendar(completion: @escaping (Bool, Any) -> Void) {
+        Alamofire.request(Urls.baseUrl + Path.Setting.rawValue, method: .get, parameters: nil, headers: self.headers).validate()
             .responseObject(completionHandler: {
-                (response: DataResponse<Setting>) in
+                (response: DataResponse<CalendarSettings>) in
                 switch response.result {
                 case .success(let setting):
                     print(setting)
@@ -52,5 +52,32 @@ class CalendarServices: Service {
                     completion(false, error)
                 }
             })
+    }
+    
+    func updateCalendar(calendarId: String, parameters: Parameters, completion: @escaping (Bool, Any) -> Void) {
+        Alamofire.request(Urls.baseUrl + Path.Setting.rawValue + "?id=\(calendarId)", method: .put, parameters: parameters, headers: self.headers).validate()
+            .responseObject(completionHandler: {
+                (response: DataResponse<CalendarSettings>) in
+                switch response.result {
+                case .success(let setting):
+                    print(setting)
+                    self.persistanceManager.createOrUpdate(setting)
+                    completion(true, setting)
+                case .failure(let error):
+                    print(error)
+                    completion(false, error)
+                }
+            })
+    }
+    
+    func updateAppointment(appointmentId: String, parameters: Parameters, completion: @escaping (Bool, Any) -> Void) {
+        Alamofire.request(Urls.baseUrl + Path.Appointment.rawValue + "?id=\(appointmentId)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate()
+            .completion(completion: completion)
+    }
+    
+    func cancelAppointment(appointmentId: String, completion: @escaping (Bool, Any) -> Void) {
+        let parameters: Parameters = ["id": appointmentId]
+        Alamofire.request(Urls.baseUrl + Path.Appointment.rawValue, method: .delete, parameters: parameters, encoding: URLEncoding.default, headers: self.headers).validate()
+                .completion(completion: completion)
     }
 }

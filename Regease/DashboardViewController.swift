@@ -12,12 +12,19 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
 
     @IBOutlet weak var tableView: UITableView!
     var dashboardViewModel: DashboardViewModel?
+    var selectedAppointmentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dashboardViewModel = DashboardViewModel(reload: { () -> Void in
             self.tableView.reloadData()
+            print("tableView reloaded")
         }, persistence: PersistenceManager.sharedInstance)
+        self.tableView.reloadData()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        CalendarServices.sharedInstance.getAppointments(completion: {_, _ -> Void in})
     }
 
     // TableView Delegates
@@ -48,9 +55,21 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellReuseIdentifier.DashboardCell.rawValue) as? DashboardTableViewCell
             if let viewModel = dashboardViewModel {
-                cell?.configure(forAppointment: viewModel.appointments[indexPath.row - 1])
+                cell?.configure(forAppointment: viewModel.appointments[indexPath.row - 1], buttonAction: {
+                    self.selectedAppointmentIndex = indexPath.row - 1
+                    self.performSegue(withIdentifier: SegueIdentifier.showDetails.rawValue, sender: self)
+                })
             }
             return cell!
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifier.showDetails.rawValue {
+            let vc = segue.destination as? AppointmentDetailsViewController
+            if let viewModel = dashboardViewModel {
+                vc?.detailsViewModel = AppointmentDetailsViewModel(appointment: viewModel.appointments[selectedAppointmentIndex])
+            }
         }
     }
 

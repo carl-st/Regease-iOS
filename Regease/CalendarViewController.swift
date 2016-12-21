@@ -39,8 +39,8 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
             calendarViewModel = CalendarViewModel()
         }
         
-        if let realmWorkingDays = PersistenceManager.sharedInstance.settingForKey(key: Settings.WorkingDays) {
-            let stringWorkingDays = realmWorkingDays.value.components(separatedBy: ",")
+        if let calendar = PersistenceManager.sharedInstance.calendar() {
+            let stringWorkingDays = calendar.workingDays.components(separatedBy: ",")
             for day in stringWorkingDays {
                 workingDays.append(Int(day)!)
             }
