@@ -16,8 +16,9 @@ class AlertView: SIAlertView {
         super.init(title: title.uppercased(), andMessage: message)
 //        AlertView.appearance().setDefaultButtonImage(UIImage(named: "YellowButton"), for: .normal)
 //        AlertView.appearance().setCancelButtonImage(UIImage(named: "EmptyYellowButton"), for: .normal)
-        buttonColor = UIColor.white
+        buttonColor = Colors.background
         cancelButtonColor = Colors.accent
+        destructiveButtonColor = Colors.warn
         backgroundStyle = .solid
         buttonFont = UIFont(style: .Light, size: 17)
         messageFont = UIFont(style: .Light, size: 15)
@@ -51,7 +52,6 @@ class AlertView: SIAlertView {
 //        SIAlertView.appearance().setDefaultButtonImage(UIImage(named: "YellowButton"), for: .normal)
 //        SIAlertView.appearance().setDestructiveButtonImage(UIImage(named: "EmptyRedButton"), for: .normal)
         buttonsListStyle = .normal
-        destructiveButtonColor = Colors.warn
     }
     
     required init(coder aDecoder: NSCoder) {

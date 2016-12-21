@@ -71,19 +71,8 @@ class CalendarServices: Service {
     }
     
     func updateAppointment(appointmentId: String, parameters: Parameters, completion: @escaping (Bool, Any) -> Void) {
-        Alamofire.request(Urls.baseUrl + Path.Appointment.rawValue + "?id=\(appointmentId)", method: .put, parameters: parameters, headers: self.headers).validate()
-            .responseArray(completionHandler: {
-                (response: DataResponse<[Appointment]>) in
-                switch response.result {
-                case .success(let appointments):
-                    print(appointments)
-                    self.persistanceManager.createOrUpdate(appointments)
-                    completion(true, appointments)
-                case .failure(let error):
-                    print(error)
-                    completion(false, error)
-                }
-            })
+        Alamofire.request(Urls.baseUrl + Path.Appointment.rawValue + "?id=\(appointmentId)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate()
+            .completion(completion: completion)
     }
     
     func cancelAppointment(appointmentId: String, completion: @escaping (Bool, Any) -> Void) {

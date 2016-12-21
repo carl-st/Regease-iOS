@@ -27,7 +27,7 @@ extension AppDelegate {
     
 }
 
-extension ActionSheetDatePicker {
+extension AbstractActionSheetPicker {
     
     func applyPickerStyling(title: String) {
         setTextColor(Colors.background)
@@ -42,6 +42,7 @@ extension ActionSheetDatePicker {
     }
     
 }
+
 
 struct Colors {
     static let primary = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0) // Grey 200

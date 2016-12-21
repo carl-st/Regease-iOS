@@ -15,8 +15,18 @@ class AppointmentDetailsViewModel {
     var visitTypeText = ""
     var emailText = ""
     var appointment: Appointment?
+    var visitTypes: [VisitType] = []
+    var visitTypeNames: [String] = []
+    
+    var newDate = ""
+    var newVisitType = ""
     
     init(appointment: Appointment) {
+         visitTypes = Array(PersistenceManager.sharedInstance.visitTypes())
+        for visitType in visitTypes {
+            visitTypeNames.append(visitType.name)
+        }
+        
         self.appointment = appointment
         if let registrant = appointment.registrant {
             self.nameText = registrant.name
