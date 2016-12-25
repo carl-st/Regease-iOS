@@ -22,3 +22,8 @@ struct Settings {
     static var WorkingHours = "WorkingHours"
     static var WorkingDays = "WorkingDays"
 }
+
+// SBConstants somehow ignore these controllers
+struct StoryboardTabBar {
+    static var MainTabBarController = "MainTabBarController"
+}

@@ -42,7 +42,11 @@ class SettingsTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        if indexPath.section == 2 {
+        if indexPath.section == 0 {
+            
+        } else if indexPath.section == 1 {
+            
+        } else if indexPath.section == 2 {
             AuthServices.sharedInstance.logout(completion: {
                 success, error -> Void in
                 if success {

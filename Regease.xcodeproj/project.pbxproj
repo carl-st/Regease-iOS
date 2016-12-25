@@ -34,7 +34,6 @@
 		F9745F1D1DEC958A00F2F7A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F1C1DEC958A00F2F7A7 /* User.swift */; };
 		F9745F1F1DECCD4300F2F7A7 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F1E1DECCD4300F2F7A7 /* GlobalConstants.swift */; };
 		F9745F221DECD33C00F2F7A7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F211DECD33C00F2F7A7 /* SettingsTableViewController.swift */; };
-		F9745F241DECD73100F2F7A7 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F231DECD73100F2F7A7 /* UIConstants.swift */; };
 		F9B390381DEDCA4E000FE192 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B390281DEDCA4E000FE192 /* Roboto-Black.ttf */; };
 		F9B390391DEDCA4E000FE192 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B390281DEDCA4E000FE192 /* Roboto-Black.ttf */; };
 		F9B3903A1DEDCA4E000FE192 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B390281DEDCA4E000FE192 /* Roboto-Black.ttf */; };
@@ -94,6 +93,7 @@
 		F9D5346F1DEB355E009064A1 /* RegeaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5346E1DEB355E009064A1 /* RegeaseTests.swift */; };
 		F9D5347A1DEB355E009064A1 /* RegeaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D534791DEB355E009064A1 /* RegeaseUITests.swift */; };
 		F9DA19421E09EE9D003FF1A6 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DA19411E09EE9D003FF1A6 /* AlertView.swift */; };
+		F9E1A9651E101C09003EC6D8 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1A9641E101C09003EC6D8 /* UIConstants.swift */; };
 		F9F3E8931DEEF0F60011F8F4 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3E8921DEEF0F60011F8F4 /* Appearance.swift */; };
 		F9F3E8951DEEF1890011F8F4 /* Regease+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3E8941DEEF1890011F8F4 /* Regease+UIFont.swift */; };
 		F9F3E8971DEF03800011F8F4 /* Regease+DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3E8961DEF03800011F8F4 /* Regease+DataRequest.swift */; };
@@ -158,7 +158,6 @@
 		F9745F1C1DEC958A00F2F7A7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		F9745F1E1DECCD4300F2F7A7 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalConstants.swift; path = Other/GlobalConstants.swift; sourceTree = "<group>"; };
 		F9745F211DECD33C00F2F7A7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = ViewControllers/SettingsTableViewController.swift; sourceTree = "<group>"; };
-		F9745F231DECD73100F2F7A7 /* UIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIConstants.swift; path = Other/UIConstants.swift; sourceTree = "<group>"; };
 		F9B390281DEDCA4E000FE192 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		F9B390291DEDCA4E000FE192 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		F9B3902A1DEDCA4E000FE192 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -192,6 +191,7 @@
 		F9D534791DEB355E009064A1 /* RegeaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegeaseUITests.swift; sourceTree = "<group>"; };
 		F9D5347B1DEB355E009064A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DA19411E09EE9D003FF1A6 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertView.swift; path = Other/AlertView.swift; sourceTree = "<group>"; };
+		F9E1A9641E101C09003EC6D8 /* UIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		F9F3E8921DEEF0F60011F8F4 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Appearance.swift; path = Other/Appearance.swift; sourceTree = "<group>"; };
 		F9F3E8941DEEF1890011F8F4 /* Regease+UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Regease+UIFont.swift"; sourceTree = "<group>"; };
 		F9F3E8961DEF03800011F8F4 /* Regease+DataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Regease+DataRequest.swift"; path = "Other/Regease+DataRequest.swift"; sourceTree = "<group>"; };
@@ -312,7 +312,7 @@
 				F96A53221DEE026C0093761E /* XIBs */,
 				F9B390271DEDCA37000FE192 /* Fonts */,
 				F9745F1E1DECCD4300F2F7A7 /* GlobalConstants.swift */,
-				F9745F231DECD73100F2F7A7 /* UIConstants.swift */,
+				F9E1A9641E101C09003EC6D8 /* UIConstants.swift */,
 				F9DA19411E09EE9D003FF1A6 /* AlertView.swift */,
 			);
 			name = Other;
@@ -496,6 +496,7 @@
 				F9D534521DEB355E009064A1 /* Resources */,
 				F5B47CEF62A75D20271118A7 /* [CP] Embed Pods Frameworks */,
 				397147C1EFE312A84633F0FD /* [CP] Copy Pods Resources */,
+				F9E1A9631E100B9B003EC6D8 /* Storyboard Constants */,
 			);
 			buildRules = (
 			);
@@ -800,6 +801,20 @@
 			shellPath = /bin/sh;
 			shellScript = "Echo \"Setting up local.ip file\"\neval \"${GCC_PREPROCESSOR_DEFINITIONS}\"\n\nif [ ${LOCAL} ] ; then\nIP_ADDRESS=\"$(ipconfig getifaddr en0)\"\necho \"Setting $IP_ADDRESS in local.ip\"\necho -n \"http://$IP_ADDRESS:8080/\" > local.ip\nelse\necho \"Local scheme not selected.. skipping.\"\nfi";
 		};
+		F9E1A9631E100B9B003EC6D8 /* Storyboard Constants */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Storyboard Constants";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo $(bash -l -c  \"source ~/.bash_profile && cd Regease && bundle exec sbconstants -w UIConstants.swift\")";
+		};
 		FA65A8923A6F5B4387AADC99 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -857,12 +872,12 @@
 				F9745F191DEC8AC900F2F7A7 /* PersistenceManager.swift in Sources */,
 				F9F3E8991DEF1E7F0011F8F4 /* Appointment.swift in Sources */,
 				F9F4EDAD1DECF39900117C3A /* CalendarServices.swift in Sources */,
-				F9745F241DECD73100F2F7A7 /* UIConstants.swift in Sources */,
 				F968841A1E08069100B6BDAB /* AppointmentDetailsViewController.swift in Sources */,
 				F92658F01DF7106400EA8598 /* CalendarHeader.swift in Sources */,
 				F96DB4C81DECD98800E1CE38 /* DashboardViewModel.swift in Sources */,
 				F9F3E8951DEEF1890011F8F4 /* Regease+UIFont.swift in Sources */,
 				F9F3E89D1DEF24370011F8F4 /* VisitType.swift in Sources */,
+				F9E1A9651E101C09003EC6D8 /* UIConstants.swift in Sources */,
 				F938CBF31DFAE21B004E1E3D /* DashboardTableViewCell.swift in Sources */,
 				F9F3E8931DEEF0F60011F8F4 /* Appearance.swift in Sources */,
 				F968841C1E0806A800B6BDAB /* AppointmentDetailsViewModel.swift in Sources */,
