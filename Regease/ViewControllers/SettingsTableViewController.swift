@@ -42,7 +42,20 @@ class SettingsTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        if indexPath.section == 2 {
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                self.performSegue(withIdentifier: SegueIdentifier.showAppearanceSettings.rawValue, sender: self)
+            case 1:
+                self.performSegue(withIdentifier: SegueIdentifier.showCalendarSettings.rawValue, sender: self)
+            case 2:
+                self.performSegue(withIdentifier: SegueIdentifier.showVisitsSettings.rawValue, sender: self)
+            default:
+                print("undefined row")
+            }
+        } else if indexPath.section == 1 {
+            
+        } else if indexPath.section == 2 {
             AuthServices.sharedInstance.logout(completion: {
                 success, error -> Void in
                 if success {
@@ -61,16 +74,7 @@ class SettingsTableViewController: UITableViewController {
             })
         }
     }
-    
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
     // MARK: - Navigation
 

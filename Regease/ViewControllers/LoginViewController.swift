@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
                     success, data -> Void in
                     if success {
                         let storyboard = UIStoryboard(name: StoryboardNames.Main.rawValue, bundle: nil)
-                        let vc = storyboard.instantiateViewController(withIdentifier: ViewControllerStoryboardIdentifier.MainTabBarController.rawValue) as? MainTabBarController
+                        let vc = storyboard.instantiateViewController(withIdentifier: StoryboardTabBar.MainTabBarController) as? MainTabBarController
                         UIView.transition(with: self.window, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
                             () in }) {
                                 (success: Bool) -> Void in
