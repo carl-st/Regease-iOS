@@ -84,6 +84,12 @@
 		F9B390671DEDCA4E000FE192 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B390371DEDCA4E000FE192 /* Roboto-ThinItalic.ttf */; };
 		F9B390691DEDD606000FE192 /* local.ip in Resources */ = {isa = PBXBuildFile; fileRef = F9B390681DEDD606000FE192 /* local.ip */; };
 		F9B3906F1DEDE4F3000FE192 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B3906E1DEDE4F3000FE192 /* MainTabBarController.swift */; };
+		F9C2FE5B1E15800000A460F8 /* VisitTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2FE5A1E15800000A460F8 /* VisitTypeTableViewCell.swift */; };
+		F9C2FE5D1E1584DF00A460F8 /* VisitsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2FE5C1E1584DF00A460F8 /* VisitsSettingsViewController.swift */; };
+		F9C2FE5F1E1589B300A460F8 /* VisitsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2FE5E1E1589B300A460F8 /* VisitsSettingsViewModel.swift */; };
+		F9C2FE611E15942800A460F8 /* CalendarSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2FE601E15942800A460F8 /* CalendarSettingsViewModel.swift */; };
+		F9CFE5571E13EE0F006FE7AC /* CalendarSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CFE5561E13EE0F006FE7AC /* CalendarSettingsViewController.swift */; };
+		F9CFE5591E13F6CB006FE7AC /* AppearanceSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CFE5581E13F6CB006FE7AC /* AppearanceSettingsViewController.swift */; };
 		F9D534581DEB355E009064A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D534571DEB355E009064A1 /* AppDelegate.swift */; };
 		F9D5345A1DEB355E009064A1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D534591DEB355E009064A1 /* DashboardViewController.swift */; };
 		F9D5345C1DEB355E009064A1 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5345B1DEB355E009064A1 /* CalendarViewController.swift */; };
@@ -176,6 +182,12 @@
 		F9B390371DEDCA4E000FE192 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		F9B390681DEDD606000FE192 /* local.ip */ = {isa = PBXFileReference; lastKnownFileType = text; path = local.ip; sourceTree = "<group>"; };
 		F9B3906E1DEDE4F3000FE192 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = ViewControllers/MainTabBarController.swift; sourceTree = "<group>"; };
+		F9C2FE5A1E15800000A460F8 /* VisitTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisitTypeTableViewCell.swift; path = Other/VisitTypeTableViewCell.swift; sourceTree = "<group>"; };
+		F9C2FE5C1E1584DF00A460F8 /* VisitsSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisitsSettingsViewController.swift; path = ViewControllers/VisitsSettingsViewController.swift; sourceTree = "<group>"; };
+		F9C2FE5E1E1589B300A460F8 /* VisitsSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisitsSettingsViewModel.swift; path = ViewModels/VisitsSettingsViewModel.swift; sourceTree = "<group>"; };
+		F9C2FE601E15942800A460F8 /* CalendarSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarSettingsViewModel.swift; path = ViewModels/CalendarSettingsViewModel.swift; sourceTree = "<group>"; };
+		F9CFE5561E13EE0F006FE7AC /* CalendarSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarSettingsViewController.swift; path = ViewControllers/CalendarSettingsViewController.swift; sourceTree = "<group>"; };
+		F9CFE5581E13F6CB006FE7AC /* AppearanceSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppearanceSettingsViewController.swift; path = ViewControllers/AppearanceSettingsViewController.swift; sourceTree = "<group>"; };
 		F9D534541DEB355E009064A1 /* Regease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Regease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D534571DEB355E009064A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D534591DEB355E009064A1 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +274,8 @@
 				F90F32031DF4A8C400EC7B08 /* CalendarDayTableViewCell.swift */,
 				F938CBF21DFAE21B004E1E3D /* DashboardTableViewCell.swift */,
 				F938CBF41DFB2099004E1E3D /* DashboardWelcomeTableViewCell.swift */,
+				F9C2FE5A1E15800000A460F8 /* VisitTypeTableViewCell.swift */,
+				F9C2FE601E15942800A460F8 /* CalendarSettingsViewModel.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -297,8 +311,8 @@
 			isa = PBXGroup;
 			children = (
 				F92658EE1DF7104100EA8598 /* Calendar */,
+				F9CFE5551E13EDDA006FE7AC /* Settings */,
 				F9D534591DEB355E009064A1 /* DashboardViewController.swift */,
-				F9745F211DECD33C00F2F7A7 /* SettingsTableViewController.swift */,
 				F96884191E08069100B6BDAB /* AppointmentDetailsViewController.swift */,
 			);
 			name = Home;
@@ -347,6 +361,17 @@
 				F9B390371DEDCA4E000FE192 /* Roboto-ThinItalic.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		F9CFE5551E13EDDA006FE7AC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F9745F211DECD33C00F2F7A7 /* SettingsTableViewController.swift */,
+				F9CFE5561E13EE0F006FE7AC /* CalendarSettingsViewController.swift */,
+				F9CFE5581E13F6CB006FE7AC /* AppearanceSettingsViewController.swift */,
+				F9C2FE5C1E1584DF00A460F8 /* VisitsSettingsViewController.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		F9D5344B1DEB355E009064A1 = {
@@ -442,6 +467,7 @@
 				F96DB4C71DECD98800E1CE38 /* DashboardViewModel.swift */,
 				F96DB4C91DECD9BD00E1CE38 /* CalendarViewModel.swift */,
 				F968841B1E0806A800B6BDAB /* AppointmentDetailsViewModel.swift */,
+				F9C2FE5E1E1589B300A460F8 /* VisitsSettingsViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -858,8 +884,10 @@
 				F96884181E07FC5A00B6BDAB /* Calendar.swift in Sources */,
 				F90F32041DF4A8C400EC7B08 /* CalendarDayTableViewCell.swift in Sources */,
 				F96DB4CE1DECDE8700E1CE38 /* LoginViewController.swift in Sources */,
+				F9CFE5571E13EE0F006FE7AC /* CalendarSettingsViewController.swift in Sources */,
 				F96DB4C61DECD8EE00E1CE38 /* AuthServices.swift in Sources */,
 				F90F32081DF4AFED00EC7B08 /* Regease+NSDate.swift in Sources */,
+				F9C2FE5D1E1584DF00A460F8 /* VisitsSettingsViewController.swift in Sources */,
 				F9D5345C1DEB355E009064A1 /* CalendarViewController.swift in Sources */,
 				F9745F161DEC8A1200F2F7A7 /* Service.swift in Sources */,
 				F9F3E89B1DEF22FF0011F8F4 /* Registrant.swift in Sources */,
@@ -867,6 +895,7 @@
 				F96A53261DEE03470093761E /* CalendarDateCellView.swift in Sources */,
 				F9745F1D1DEC958A00F2F7A7 /* User.swift in Sources */,
 				F9745F221DECD33C00F2F7A7 /* SettingsTableViewController.swift in Sources */,
+				F9C2FE611E15942800A460F8 /* CalendarSettingsViewModel.swift in Sources */,
 				F9F3E8971DEF03800011F8F4 /* Regease+DataRequest.swift in Sources */,
 				F90F32061DF4AEAB00EC7B08 /* Regease+DateFormatter.swift in Sources */,
 				F9745F191DEC8AC900F2F7A7 /* PersistenceManager.swift in Sources */,
@@ -882,7 +911,10 @@
 				F9F3E8931DEEF0F60011F8F4 /* Appearance.swift in Sources */,
 				F968841C1E0806A800B6BDAB /* AppointmentDetailsViewModel.swift in Sources */,
 				F9D534581DEB355E009064A1 /* AppDelegate.swift in Sources */,
+				F9C2FE5F1E1589B300A460F8 /* VisitsSettingsViewModel.swift in Sources */,
 				F9F3E89F1DEF27260011F8F4 /* Business.swift in Sources */,
+				F9CFE5591E13F6CB006FE7AC /* AppearanceSettingsViewController.swift in Sources */,
+				F9C2FE5B1E15800000A460F8 /* VisitTypeTableViewCell.swift in Sources */,
 				F9D5345A1DEB355E009064A1 /* DashboardViewController.swift in Sources */,
 				F9B3906F1DEDE4F3000FE192 /* MainTabBarController.swift in Sources */,
 				F9DA19421E09EE9D003FF1A6 /* AlertView.swift in Sources */,

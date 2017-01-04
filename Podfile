@@ -22,6 +22,7 @@ target 'Regease' do
   pod 'SIAlertView'
   pod 'ActionSheetPicker-3.0'
   pod 'NVActivityIndicatorView'
+  pod 'BEMCheckBox'
 
   target 'RegeaseTests' do
     inherit! :search_paths

@@ -21,6 +21,7 @@ public enum TableViewCellReuseIdentifier : String {
     case CalendarDayCell
     case DashboardCell
     case DashboardWelcomeCell
+    case VisitTypeCell
 }
 
 public enum ViewControllerStoryboardIdentifier : String {

@@ -8,6 +8,7 @@ PODS:
   - AlamofireObjectMapper (4.0.0):
     - Alamofire (~> 4.0)
     - ObjectMapper (~> 2.0)
+  - BEMCheckBox (1.4.0)
   - JTAppleCalendar (6.0.2)
   - Material (2.3.19):
     - Material/Core (= 2.3.19)
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.1)
   - AlamofireNetworkActivityIndicator (~> 2.0)
   - AlamofireObjectMapper (~> 4.0)
+  - BEMCheckBox
   - JTAppleCalendar (~> 6.0)
   - Material (~> 2.0)
   - NVActivityIndicatorView
@@ -77,6 +79,7 @@ SPEC CHECKSUMS:
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   AlamofireNetworkActivityIndicator: 4716f6554bdfb9c7cf13b1e0e3af21163129690a
   AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
+  BEMCheckBox: e18e4a148905b290bd03d98b767651c104f4eda3
   JTAppleCalendar: d0f71bdd45105279fc59329a9c24017e7028e499
   Material: ad15e0b55e3a3c104195e8409afa199a430c2e6c
   NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
@@ -90,6 +93,6 @@ SPEC CHECKSUMS:
   SIAlertView: 20c794b55eaf44d888773ea51647cf8907723919
   TPKeyboardAvoiding: a5138f318c06fb3e151f886e18ce4a72695d9cbe
 
-PODFILE CHECKSUM: 38075f548b988bb13968cd098ffb21a81a4c488b
+PODFILE CHECKSUM: e955db354d8032d85a52ca507d172c1caec3842c
 
 COCOAPODS: 1.1.1
