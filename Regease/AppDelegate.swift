@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appointment.date = NSDate().addingTimeInterval(600)
             appointment.registrant = registrant
             appointment.visitType = visitType
+            appointment.id = "0"
             PersistenceManager.sharedInstance.createOrUpdate(appointment)
         }
         
@@ -45,11 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let registrant = Registrant()
         let visitType = VisitType()
         visitType.name = "Consultation"
+        visitType.duration = 3600
         registrant.name = "John Travolta"
         registrant.email = "john@travolta.com"
         appointment.date = NSDate().addingTimeInterval(600)
         appointment.registrant = registrant
         appointment.visitType = visitType
+        appointment.id = "0"
         PersistenceManager.sharedInstance.createOrUpdate(appointment)
         if me == nil {
             let initialViewController = storyboard.instantiateViewController(withIdentifier: NavigationControllerStoryboardIdentifier.LoginNavigationController.rawValue)

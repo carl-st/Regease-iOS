@@ -8,7 +8,7 @@
 
 import XCTest
 
-class RegeaseUITests: XCTestCase {
+class HomeTests: XCTestCase {
         
     var app = XCUIApplication()
     
@@ -17,9 +17,6 @@ class RegeaseUITests: XCTestCase {
         continueAfterFailure = false
         app.launchArguments = ["UI_TEST_MODE"]
         app.launch()
-        
-        let appointment =
-
     }
     
     override func tearDown() {
@@ -122,8 +119,41 @@ class RegeaseUITests: XCTestCase {
         XCTAssert(title.exists)
     }
     
-    func testCalendar() {
+    func testCalendarFlow() {
+        doLogin(app: app)
+        app.tabBars.children(matching: .button).element(boundBy: 1).tap()
+        app.collectionViews.children(matching: .cell).element(boundBy: 10).children(matching: .other).element.tap()
         
+        app.tables.staticTexts["John Travolta"].tap()
+        var title = app.navigationBars["Details"].staticTexts["Details"]
+        XCTAssert(title.exists)
+        
+        app.navigationBars["Details"].buttons["Calendar"].tap()
+        title = app.navigationBars["Calendar"].staticTexts["Calendar"]
+        XCTAssert(title.exists)
     }
     
+    func testDashboardFlow() {
+        doLogin(app: app)
+        app.tabBars.children(matching: .button).element(boundBy: 0).tap()
+        app.navigationBars["Dashboard"].staticTexts["Dashboard"].tap()
+        
+        let tablesQuery2 = app.tables
+        let tablesQuery = tablesQuery2
+        
+        var label = tablesQuery.staticTexts["John Travolta"]
+        label = tablesQuery.staticTexts["Consultation"]
+        app.tables.cells.containing(.staticText, identifier:"3:44 PM - 3:44 PM").children(matching: .button).element.tap()
+        
+        app.tables.otherElements["dashboardCard"].tap()
+        
+        let detailsNavigationBar = app.navigationBars["Details"]
+        var title = detailsNavigationBar.staticTexts["Details"]
+        XCTAssert(title.exists)
+        
+        detailsNavigationBar.buttons["Dashboard"].tap()
+        title = app.navigationBars["Dashboard"].staticTexts["Dashboard"]
+        XCTAssert(title.exists)
+    }
+
 }
