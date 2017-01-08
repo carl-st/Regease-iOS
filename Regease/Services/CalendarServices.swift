@@ -29,7 +29,13 @@ class CalendarServices: Service {
                 switch response.result {
                 case .success(let appointments):
                     print(appointments)
-                    self.persistanceManager.createOrUpdateAndRemoveDeleted(appointments)
+                    // TODO: Find better way
+                    let args = ProcessInfo.processInfo.arguments
+                    if args.contains("UI_TEST_MODE") {
+                        self.persistanceManager.createOrUpdate(appointments)
+                    } else {
+                        self.persistanceManager.createOrUpdateAndRemoveDeleted(appointments)
+                    }
                     completion(true, appointments)
                 case .failure(let error):
                     print(error)

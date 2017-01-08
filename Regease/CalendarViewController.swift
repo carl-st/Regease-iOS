@@ -16,6 +16,7 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
     var workingDays: [Int] = []
     var workingHours: [String] = []
     var calendarViewModel: CalendarViewModel?
+    var selectedAppointmentIndex = 0
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     
     @IBOutlet weak var monthLabel: UILabel!
@@ -172,5 +173,17 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         return cell!
     }
 
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedAppointmentIndex = indexPath.row
+        self.performSegue(withIdentifier: SegueIdentifier.showDetails.rawValue, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifier.showDetails.rawValue {
+            if let viewModel = calendarViewModel {
+                let vc = segue.destination as? AppointmentDetailsViewController
+                vc?.detailsViewModel = AppointmentDetailsViewModel(appointment: viewModel.events[selectedAppointmentIndex])
+            }
+        }
+    }
 }
