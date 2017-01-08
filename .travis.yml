@@ -1,0 +1,13 @@
+language: objective-c
+
+branches:
+ only:
+ - development
+
+xcode_project: Regease.xcodeproj
+xcode_scheme: Regease
+osx_image: xcode8.2
+xcode_sdk: iphonesimulator10.2
+
+script:
+- xcodebuild clean build test -project Regease.xcodeproj -scheme Regease

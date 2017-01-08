@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         applyAppearance()
         let _ = PersistenceManager.sharedInstance
         let args = ProcessInfo.processInfo.arguments
+        
         if args.contains("UI_TEST_MODE") {
             PersistenceManager.sharedInstance.clearUserData()
             debugPrint("cleared user data")
@@ -42,18 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initial VC
         let storyboard = UIStoryboard(name: StoryboardNames.Login.rawValue, bundle: nil)
         let me = PersistenceManager.sharedInstance.user()
-        let appointment = Appointment()
-        let registrant = Registrant()
-        let visitType = VisitType()
-        visitType.name = "Consultation"
-        visitType.duration = 3600
-        registrant.name = "John Travolta"
-        registrant.email = "john@travolta.com"
-        appointment.date = NSDate().addingTimeInterval(600)
-        appointment.registrant = registrant
-        appointment.visitType = visitType
-        appointment.id = "0"
-        PersistenceManager.sharedInstance.createOrUpdate(appointment)
+
         if me == nil {
             let initialViewController = storyboard.instantiateViewController(withIdentifier: NavigationControllerStoryboardIdentifier.LoginNavigationController.rawValue)
             self.window?.rootViewController = initialViewController
