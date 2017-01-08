@@ -60,8 +60,11 @@ class CalendarServices: Service {
             })
     }
     
-    func updateCalendar(calendarId: String, parameters: Parameters, completion: @escaping (Bool, Any) -> Void) {
-        Alamofire.request(Urls.baseUrl + Path.Setting.rawValue + "?id=\(calendarId)", method: .put, parameters: parameters, headers: self.headers).validate()
+    func updateCalendar(calendar: CalendarSettings, completion: @escaping (Bool, Any) -> Void) {
+        PersistenceManager.sharedInstance.realm.beginWrite()
+        let parameters = Mapper().toJSON(calendar)
+        try! PersistenceManager.sharedInstance.realm.commitWrite()
+        Alamofire.request(Urls.baseUrl + Path.Setting.rawValue + "?id=\(calendar.id)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate()
             .responseObject(completionHandler: {
                 (response: DataResponse<CalendarSettings>) in
                 switch response.result {

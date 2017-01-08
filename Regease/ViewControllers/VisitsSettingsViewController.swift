@@ -27,7 +27,7 @@ class VisitsSettingsViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     @IBAction func removeAction(_ sender: Any) {
-        
+        self.tableView.isEditing = true
     }
     
     @IBAction func saveAction(_ sender: Any) {

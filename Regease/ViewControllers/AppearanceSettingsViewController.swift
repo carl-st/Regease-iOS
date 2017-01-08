@@ -15,7 +15,7 @@ class AppearanceSettingsViewController: UIViewController {
     @IBOutlet weak var descriptionTextField: TextField!
     @IBOutlet weak var primaryColorTextField: TextField!
     @IBOutlet weak var accentColorTextField: TextField!
-    
+    @IBOutlet weak var warnColorTextField: TextField!
     @IBOutlet weak var visibilitySwitch: UISwitch!
     
     override func viewDidLoad() {

@@ -61,7 +61,7 @@ class AppointmentDetailsViewController: UIViewController {
 //                    viewModel.newDate = value.string(with: .dateTimeWithSeconds)
 //                }
 
-                self.saveChanges(parameters: ["date":value.string(with: .dateTimeWithSeconds)], completion: {
+                self.saveChanges(parameters: ["date":value.string(with:  .dateTimeWithSeconds)], completion: {
                     self.dateLabel.text = "This appointment is set for\n\(value.string(with: .longTimeAndDate))"
                 })
 

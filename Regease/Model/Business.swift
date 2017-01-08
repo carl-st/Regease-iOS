@@ -25,7 +25,13 @@ class Business: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        id <- map["_id"]
+        if map.mappingType == .toJSON {
+            var id = self.id
+            id <- map["_id"]
+        }
+        else {
+            id <- map["_id"]
+        }
         businessDescription <- map["description"]
         name <- map["name"]
         email <- map["email"]
