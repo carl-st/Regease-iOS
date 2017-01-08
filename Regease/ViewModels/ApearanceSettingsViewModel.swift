@@ -7,24 +7,33 @@
 //
 
 import Foundation
+import ObjectMapper
 
 class AppearanceSettingsViewModel {
     
     var calendar: CalendarSettings?
+    var modifications: CalendarSettings?
     var titleText = ""
     var descriptionText = ""
     var primaryColorText = ""
     var accentColorText = ""
+    var warnColorText = ""
     var visibility: Bool = false
     
     init(persistence: PersistenceManager = PersistenceManager.sharedInstance) {
         calendar = persistence.calendar()
+        persistence.realm.beginWrite()
+        let calendarJSON = Mapper().toJSON(calendar!)
+        self.modifications = Mapper().map(JSON: calendarJSON)
+        try! persistence.realm.commitWrite()
         if let calendar = calendar {
             self.titleText = calendar.title
-            self.descriptionText = calendar.description
+            self.descriptionText = calendar.calendarDescription
             self.visibility = calendar.visibleTitle
             self.primaryColorText = calendar.primaryColor
             self.accentColorText = calendar.accentColor
+            self.warnColorText = calendar.warnColor
+            self.visibility = calendar.visibleTitle
         }
     }
     
