@@ -12,7 +12,7 @@ struct Urls {
     #if LOCAL
     static var baseUrl = "http://injected:8080/api/" // See build phases > "Inject local ip" script
     #elseif PRODUCTION
-    static var baseUrl = "http://injected:8080/api/" // TODO: Set proper AWS IPs
+    static var baseUrl = "http://192.168.0.53:8080/api/" // TODO: Set proper AWS IPs
     #else
     static var baseUrl = "http://injected:8080/api/"
     #endif

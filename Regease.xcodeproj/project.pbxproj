@@ -86,6 +86,7 @@
 		F9B390671DEDCA4E000FE192 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B390371DEDCA4E000FE192 /* Roboto-ThinItalic.ttf */; };
 		F9B390691DEDD606000FE192 /* local.ip in Resources */ = {isa = PBXBuildFile; fileRef = F9B390681DEDD606000FE192 /* local.ip */; };
 		F9B3906F1DEDE4F3000FE192 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B3906E1DEDE4F3000FE192 /* MainTabBarController.swift */; };
+		F9B914B21E23CF4100FE42A4 /* NewVisitTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B914B11E23CF4100FE42A4 /* NewVisitTypeViewController.swift */; };
 		F9C2FE5B1E15800000A460F8 /* VisitTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2FE5A1E15800000A460F8 /* VisitTypeTableViewCell.swift */; };
 		F9C2FE5D1E1584DF00A460F8 /* VisitsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2FE5C1E1584DF00A460F8 /* VisitsSettingsViewController.swift */; };
 		F9C2FE5F1E1589B300A460F8 /* VisitsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2FE5E1E1589B300A460F8 /* VisitsSettingsViewModel.swift */; };
@@ -187,6 +188,7 @@
 		F9B390371DEDCA4E000FE192 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		F9B390681DEDD606000FE192 /* local.ip */ = {isa = PBXFileReference; lastKnownFileType = text; path = local.ip; sourceTree = "<group>"; };
 		F9B3906E1DEDE4F3000FE192 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = ViewControllers/MainTabBarController.swift; sourceTree = "<group>"; };
+		F9B914B11E23CF4100FE42A4 /* NewVisitTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewVisitTypeViewController.swift; path = ViewControllers/NewVisitTypeViewController.swift; sourceTree = "<group>"; };
 		F9C2FE5A1E15800000A460F8 /* VisitTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisitTypeTableViewCell.swift; path = Other/VisitTypeTableViewCell.swift; sourceTree = "<group>"; };
 		F9C2FE5C1E1584DF00A460F8 /* VisitsSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisitsSettingsViewController.swift; path = ViewControllers/VisitsSettingsViewController.swift; sourceTree = "<group>"; };
 		F9C2FE5E1E1589B300A460F8 /* VisitsSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisitsSettingsViewModel.swift; path = ViewModels/VisitsSettingsViewModel.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				F9CFE5561E13EE0F006FE7AC /* CalendarSettingsViewController.swift */,
 				F9CFE5581E13F6CB006FE7AC /* AppearanceSettingsViewController.swift */,
 				F9C2FE5C1E1584DF00A460F8 /* VisitsSettingsViewController.swift */,
+				F9B914B11E23CF4100FE42A4 /* NewVisitTypeViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -921,6 +924,7 @@
 				F968841C1E0806A800B6BDAB /* AppointmentDetailsViewModel.swift in Sources */,
 				F9D534581DEB355E009064A1 /* AppDelegate.swift in Sources */,
 				F9C2FE5F1E1589B300A460F8 /* VisitsSettingsViewModel.swift in Sources */,
+				F9B914B21E23CF4100FE42A4 /* NewVisitTypeViewController.swift in Sources */,
 				F9F3E89F1DEF27260011F8F4 /* Business.swift in Sources */,
 				F9CFE5591E13F6CB006FE7AC /* AppearanceSettingsViewController.swift in Sources */,
 				F9C2FE5B1E15800000A460F8 /* VisitTypeTableViewCell.swift in Sources */,

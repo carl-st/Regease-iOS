@@ -8,6 +8,7 @@ public enum SegueIdentifier : String {
     case showAppearanceSettings
     case showCalendarSettings
     case showDetails
+    case showNewVisit
     case showVisitsSettings
 }
 
@@ -27,6 +28,7 @@ public enum TableViewCellReuseIdentifier : String {
 public enum ViewControllerStoryboardIdentifier : String {
     case DetailsViewController
     case LoginViewController
+    case NewVisitTypeViewController
 }
 
 public enum XibNames : String {
