@@ -11,7 +11,6 @@ import ObjectMapper
 
 class CalendarSettings: Object, Mappable {
     dynamic var id = ""
-    dynamic var business: Business?
     dynamic var title = ""
     dynamic var calendarDescription = ""
     dynamic var workingDays = ""
@@ -31,10 +30,15 @@ class CalendarSettings: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        id <- map["_id"]
+        if map.mappingType == .toJSON {
+            var id = self.id
+            id <- map["_id"]
+        }
+        else {
+            id <- map["_id"]
+        }
         calendarDescription <- map["description"]
         title <- map["title"]
-        business <- map["business"]
         workingDays <- map["workingDays"]
         workingHours <- map["workingHours"]
         primaryColor <- map["primaryColor"]

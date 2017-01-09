@@ -35,4 +35,10 @@ extension DateFormatter {
         formatter.timeStyle = .short
         return formatter
     }()
+    
+    @nonobjc static let hourOnly: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH"
+        return formatter
+    }()
 }

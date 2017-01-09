@@ -8,6 +8,7 @@
 
 import UIKit
 import BEMCheckBox
+import ActionSheetPicker_3_0
 
 class CalendarSettingsViewController: UIViewController {
 
@@ -50,15 +51,49 @@ class CalendarSettingsViewController: UIViewController {
             viewModel.workingDays[4] = thursdayCheckbox.on
             viewModel.workingDays[5] = fridayCheckbox.on
             viewModel.workingDays[6] = saturdayCheckbox.on
+            viewModel.setWorkingTimeSettings()
+            CalendarServices.sharedInstance.updateCalendar(calendar: viewModel.modifications!, completion: {
+                success, data in
+                if success {
+                    AlertView.init(title: "Saved!", message: "All settings are saved and live!", cancelButtonTitle: "OK").show()
+                } else {
+                    let error = data as! Error
+                    AlertView.init(title: "Error", message: error.localizedDescription, cancelButtonTitle: "OK").show()
+                }
+            })
         }
     }
 
     @IBAction func startAction(_ sender: Any) {
-        
+        let picker = ActionSheetDatePicker(title: "Open from", datePickerMode: .time, selectedDate: Date(), doneBlock: {
+            picker, value, index in
+            if let viewModel = self.viewModel {
+                let value = value as! NSDate
+                viewModel.startingHour = Int(value.string(with: .hourOnly))!
+                viewModel.setWorkingTimeSettings()
+                self.hoursLabel.text = viewModel.workingHoursText
+            }
+        }, cancel: { ActionStringCancelBlock in
+            return
+        }, origin: (sender as AnyObject).superview)
+        picker?.applyPickerStyling(title: "Open from")
+        picker?.show()
     }
     
     @IBAction func endAction(_ sender: Any) {
-        
+        let picker = ActionSheetDatePicker(title: "Open to", datePickerMode: .time, selectedDate: Date(), doneBlock: {
+            picker, value, index in
+            if let viewModel = self.viewModel {
+                let value = value as! NSDate
+                viewModel.endingHour = Int(value.string(with: .hourOnly))!
+                viewModel.setWorkingTimeSettings()
+                self.hoursLabel.text = viewModel.workingHoursText
+            }
+        }, cancel: { ActionStringCancelBlock in
+            return
+        }, origin: (sender as AnyObject).superview)
+        picker?.applyPickerStyling(title: "Open to")
+        picker?.show()
     }
     
 }
