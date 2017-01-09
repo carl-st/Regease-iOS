@@ -61,6 +61,22 @@ class CalendarServices: Service {
             })
     }
     
+    func getVisitTypes(completion: @escaping (Bool, Any) -> Void) {
+        Alamofire.request(Urls.baseUrl + Path.VisitType.rawValue, method: .get, parameters: nil, headers: self.headers).validate()
+            .responseArray(completionHandler: {
+                (response: DataResponse<[VisitType]>) in
+                switch response.result {
+                case .success(let visiTypes):
+                    print(visiTypes)
+                    self.persistanceManager.createOrUpdate(visiTypes)
+                    completion(true, visiTypes)
+                case .failure(let error):
+                    print(error)
+                    completion(false, error)
+                }
+            })
+    }
+    
     func updateCalendar(calendar: CalendarSettings, completion: @escaping (Bool, Any) -> Void) {
         PersistenceManager.sharedInstance.realm.beginWrite()
         let parameters = Mapper().toJSON(calendar)
@@ -88,6 +104,12 @@ class CalendarServices: Service {
     func cancelAppointment(appointmentId: String, completion: @escaping (Bool, Any) -> Void) {
         let parameters: Parameters = ["id": appointmentId]
         Alamofire.request(Urls.baseUrl + Path.Appointment.rawValue, method: .delete, parameters: parameters, encoding: URLEncoding.default, headers: self.headers).validate()
+            .completion(completion: completion)
+    }
+    
+    func deactivateVisitType(visitTypeId: String, completion: @escaping (Bool, Any) -> Void) {
+        let parameters: Parameters = ["active": false]
+        Alamofire.request(Urls.baseUrl + Path.VisitType.rawValue  + "?id=\(visitTypeId)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate()
             .completion(completion: completion)
     }
     

@@ -13,6 +13,7 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         CalendarServices.sharedInstance.getCalendar(completion: {_, _ -> Void in})
+        CalendarServices.sharedInstance.getVisitTypes(completion: {_, _ -> Void in})
     }
 
 

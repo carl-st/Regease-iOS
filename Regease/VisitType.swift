@@ -15,6 +15,7 @@ class VisitType: Object, Mappable {
     dynamic var name = ""
     dynamic var duration = 0.0
     dynamic var business: Business?
+    dynamic var active = true
 
     
     override static func primaryKey() -> String? {

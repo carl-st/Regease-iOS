@@ -39,7 +39,7 @@ class VisitsSettingsViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            CalendarServices.sharedInstance.removeVisitType(visitTypeId: (self.viewModel?.visitTypes[indexPath.row].id)!, completion: {
+            CalendarServices.sharedInstance.deactivateVisitType(visitTypeId: (self.viewModel?.visitTypes[indexPath.row].id)!, completion: {
                 success, data in
                     if success {
                         let toDelete = self.viewModel?.visitTypes[indexPath.row]
