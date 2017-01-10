@@ -24,7 +24,7 @@ class AuthServices: Service {
     }
     
     func login(username: String, password: String, completion: @escaping (Bool, Any) -> Void) {
-        let parameters: Parameters = ["username": username, "password": password, "grant_type":"password", "client_id":"1", "client_secret":"abc12345"]
+        let parameters: Parameters = ["username": username, "password": password, "grant_type":"password", "client_id":"1", "client_secret": Secrets.api]
         Alamofire.request(Urls.baseUrl + Path.Login.rawValue, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate()
             .responseObject(completionHandler: {
                 (response: DataResponse<Token>) in
@@ -43,10 +43,11 @@ class AuthServices: Service {
     }
     
     func refreshToken(user: User, token: Token, completion: @escaping (Bool, Any) -> Void) {
-        let parameters: Parameters = ["username": user.username, "refresh_token": token.refreshToken, "grant_type":"refresh_token", "client_id":"1", "client_secret": Secrets.api.rawValue]
+        let parameters: Parameters = ["username": user.username, "refresh_token": token.refreshToken, "grant_type":"refresh_token", "client_id":"1", "client_secret": Secrets.api]
         Alamofire.request(Urls.baseUrl + Path.Login.rawValue, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate()
             .responseObject(completionHandler: {
                 (response: DataResponse<Token>) in
+                
                 switch response.result {
                 case .success(let token):
                     print(token)
