@@ -52,15 +52,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             AuthServices.sharedInstance.me { _, data in
                 if data is Int {
                     if data as! Int == 401 {
-                        PersistenceManager.sharedInstance.clearUserData()
-                        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-                        let storyboard = UIStoryboard(name: StoryboardNames.Login.rawValue, bundle: nil)
-                        let vc = storyboard.instantiateViewController(withIdentifier: NavigationControllerStoryboardIdentifier.LoginNavigationController.rawValue)
-                        UIView.transition(with: self.window!, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
-                            () in
-                            self.window?.rootViewController = vc
-                            self.window?.makeKeyAndVisible()
-                        }, completion: nil)
+                        let token = PersistenceManager.sharedInstance.realm.objects(Token.self).first
+                        AuthServices.sharedInstance.refreshToken(user: me!, token: token!, completion: {
+                            success, data in
+                            if !success {
+                                PersistenceManager.sharedInstance.clearUserData()
+                                UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                                let storyboard = UIStoryboard(name: StoryboardNames.Login.rawValue, bundle: nil)
+                                let vc = storyboard.instantiateViewController(withIdentifier: NavigationControllerStoryboardIdentifier.LoginNavigationController.rawValue)
+                                UIView.transition(with: self.window!, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
+                                    () in
+                                    self.window?.rootViewController = vc
+                                    self.window?.makeKeyAndVisible()
+                                }, completion: nil)
+                            }
+                        })
                     }
                 }
             }
