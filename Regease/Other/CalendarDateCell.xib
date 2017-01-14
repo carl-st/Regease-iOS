@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -21,11 +21,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAq-ml-b1X">
-                    <rect key="frame" x="150" y="150" width="50" height="50"/>
+                    <rect key="frame" x="155" y="155" width="40" height="40"/>
                     <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="CmZ-pn-IOP"/>
-                        <constraint firstAttribute="height" constant="50" id="WZM-bZ-2sq"/>
+                        <constraint firstAttribute="width" constant="40" id="CmZ-pn-IOP"/>
+                        <constraint firstAttribute="height" constant="40" id="WZM-bZ-2sq"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYR-ID-YH5">
@@ -42,18 +42,40 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Lo-fn-dgN" customClass="Circle" customModule="Regease" customModuleProvider="target">
+                    <rect key="frame" x="155" y="155" width="40" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="9RY-6N-YkK"/>
+                        <constraint firstAttribute="height" constant="40" id="kNp-R0-Icz"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="mainColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="ringColor">
+                            <color key="value" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="ringThickness">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Fw9-bM-unr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5lt-iS-Hu1"/>
+                <constraint firstItem="0Lo-fn-dgN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6Gt-em-YgQ"/>
                 <constraint firstItem="HYR-ID-YH5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="G33-2m-zPj"/>
                 <constraint firstItem="HYR-ID-YH5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Qwl-Ch-j3U"/>
                 <constraint firstItem="Fw9-bM-unr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="irw-FO-V9z"/>
                 <constraint firstItem="hAq-ml-b1X" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vH6-Ap-YPn"/>
                 <constraint firstItem="hAq-ml-b1X" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vUS-Br-DGF"/>
+                <constraint firstItem="0Lo-fn-dgN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="wve-TP-vCN"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="circleView" destination="0Lo-fn-dgN" id="OxV-nE-R6x"/>
                 <outlet property="dayLabel" destination="Fw9-bM-unr" id="Val-d2-tN5"/>
                 <outlet property="selectionView" destination="HYR-ID-YH5" id="v4R-yT-0Li"/>
                 <outlet property="unavailableView" destination="hAq-ml-b1X" id="eDt-cD-tlD"/>

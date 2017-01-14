@@ -36,6 +36,7 @@
 		F9745F1D1DEC958A00F2F7A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F1C1DEC958A00F2F7A7 /* User.swift */; };
 		F9745F1F1DECCD4300F2F7A7 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F1E1DECCD4300F2F7A7 /* GlobalConstants.swift */; };
 		F9745F221DECD33C00F2F7A7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F211DECD33C00F2F7A7 /* SettingsTableViewController.swift */; };
+		F983A8331E2AB87200F96BCF /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F983A8321E2AB87200F96BCF /* Circle.swift */; };
 		F9B390381DEDCA4E000FE192 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B390281DEDCA4E000FE192 /* Roboto-Black.ttf */; };
 		F9B390391DEDCA4E000FE192 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B390281DEDCA4E000FE192 /* Roboto-Black.ttf */; };
 		F9B3903A1DEDCA4E000FE192 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B390281DEDCA4E000FE192 /* Roboto-Black.ttf */; };
@@ -170,6 +171,7 @@
 		F9745F1C1DEC958A00F2F7A7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		F9745F1E1DECCD4300F2F7A7 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalConstants.swift; path = Other/GlobalConstants.swift; sourceTree = "<group>"; };
 		F9745F211DECD33C00F2F7A7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = ViewControllers/SettingsTableViewController.swift; sourceTree = "<group>"; };
+		F983A8321E2AB87200F96BCF /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Circle.swift; path = Other/Circle.swift; sourceTree = "<group>"; };
 		F9B390281DEDCA4E000FE192 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		F9B390291DEDCA4E000FE192 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		F9B3902A1DEDCA4E000FE192 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				F9745F1E1DECCD4300F2F7A7 /* GlobalConstants.swift */,
 				F9E1A9641E101C09003EC6D8 /* UIConstants.swift */,
 				F9DA19411E09EE9D003FF1A6 /* AlertView.swift */,
+				F983A8321E2AB87200F96BCF /* Circle.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -898,6 +901,7 @@
 				F96DB4CE1DECDE8700E1CE38 /* LoginViewController.swift in Sources */,
 				F9CFE5571E13EE0F006FE7AC /* CalendarSettingsViewController.swift in Sources */,
 				F96DB4C61DECD8EE00E1CE38 /* AuthServices.swift in Sources */,
+				F983A8331E2AB87200F96BCF /* Circle.swift in Sources */,
 				F90F32081DF4AFED00EC7B08 /* Regease+NSDate.swift in Sources */,
 				F9C2FE5D1E1584DF00A460F8 /* VisitsSettingsViewController.swift in Sources */,
 				F9D5345C1DEB355E009064A1 /* CalendarViewController.swift in Sources */,

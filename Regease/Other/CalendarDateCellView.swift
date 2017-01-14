@@ -12,4 +12,5 @@ class CalendarDateCellView: JTAppleDayCellView {
     @IBOutlet var dayLabel: UILabel!
     @IBOutlet weak var selectionView: UIView!
     @IBOutlet weak var unavailableView: UIView!
+    @IBOutlet weak var circleView: Circle!
 }

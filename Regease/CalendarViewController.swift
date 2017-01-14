@@ -112,8 +112,14 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
             myCustomCell.unavailableView.isHidden = false
             myCustomCell.dayLabel.textColor = UIColor.black
             myCustomCell.selectionView.isHidden = true
+            myCustomCell.circleView.isHidden = true
             if cellState.dateBelongsTo != .thisMonth {
                 myCustomCell.dayLabel.textColor = Colors.pastDate
+            } else {
+                if (cellState.date.isToday == true) {
+                    myCustomCell.selectionView.isHidden = true
+                    myCustomCell.circleView.isHidden = false
+                }
             }
         } else {
             if cellState.isSelected {
@@ -121,15 +127,25 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
                 myCustomCell.dayLabel.textColor = UIColor.white
                 myCustomCell.selectionView.isHidden = false
                 myCustomCell.selectionView.layer.cornerRadius = 20
+                myCustomCell.circleView.isHidden = true
             } else {
                 if cellState.dateBelongsTo == .thisMonth {
-                    myCustomCell.unavailableView.isHidden = true
-                    myCustomCell.dayLabel.textColor = UIColor.black
-                    myCustomCell.selectionView.isHidden = true
+                    if (cellState.date.isToday == true) {
+                        myCustomCell.unavailableView.isHidden = true
+                        myCustomCell.selectionView.isHidden = true
+                        myCustomCell.dayLabel.textColor = UIColor.black
+                        myCustomCell.circleView.isHidden = false
+                    } else {
+                        myCustomCell.unavailableView.isHidden = true
+                        myCustomCell.dayLabel.textColor = UIColor.black
+                        myCustomCell.selectionView.isHidden = true
+                        myCustomCell.circleView.isHidden = true
+                    }
                 } else {
                     myCustomCell.dayLabel.textColor = Colors.pastDate
                     myCustomCell.unavailableView.isHidden = true
                     myCustomCell.selectionView.isHidden = true
+                    myCustomCell.circleView.isHidden = true
                 }
             }
         }
@@ -155,6 +171,17 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         yearLabel.text = "\(year)"
     }
 
+    func drawCircle() -> CAShapeLayer {
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: 0,y: 0), radius: CGFloat(20), startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = circlePath.cgPath
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeColor = Colors.accent.cgColor
+        shapeLayer.lineWidth = 2.0
+
+        return shapeLayer
+    }
     // TableView Delegates
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
