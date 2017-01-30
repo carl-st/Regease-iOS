@@ -35,3 +35,24 @@ extension NSDate {
     }
     
 }
+
+extension Date {
+    
+    var startOfDay: Date {
+        return NSCalendar.current.startOfDay(for: self as Date)
+        
+    }
+    
+    var endOfDay: Date? {
+        var components = DateComponents()
+        components.day = 1
+        components.second = -1
+        let end = NSCalendar.current.date(byAdding: components, to: startOfDay)!
+        return end
+    }
+    
+    var isToday: Bool {
+        return NSCalendar.current.isDateInToday(self)
+    }
+    
+}

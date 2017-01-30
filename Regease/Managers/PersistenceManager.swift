@@ -80,7 +80,7 @@ class PersistenceManager: RegistrationPersistenceProtocol {
     }
     
     func visitTypes() -> Results<VisitType> {
-        return realm.objects(VisitType.self)
+        return realm.objects(VisitType.self).filter("active == true")
     }
     
     func appointments() -> Results<Appointment> {

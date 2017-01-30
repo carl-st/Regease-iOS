@@ -488,7 +488,7 @@
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Um1-ND-tVN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Um1-ND-tVN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -510,7 +510,7 @@
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Evg-HW-9dE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Evg-HW-9dE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -811,7 +811,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYU-Lr-FZW" customClass="RaisedButton" customModule="Material">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYU-Lr-FZW" customClass="RaisedButton" customModule="Material">
                                                 <rect key="frame" x="104" y="499" width="168" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="167.5" id="e0N-mG-p0T"/>
@@ -918,9 +918,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="315" id="BPu-7B-QgZ"/>
                                                     <constraint firstAttribute="height" constant="30" id="VId-gW-iSJ"/>
-                                                    <constraint firstAttribute="width" constant="121" id="vgP-n9-fu4">
-                                                        <variation key="widthClass=regular" constant="280"/>
-                                                    </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -930,21 +927,12 @@
                                                         <color key="value" red="0.0" green="0.67417293789999999" blue="0.75885450840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="vgP-n9-fu4"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="widthClass=regular">
-                                                    <mask key="constraints">
-                                                        <include reference="vgP-n9-fu4"/>
-                                                    </mask>
-                                                </variation>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="ekG-7X-tUI" firstAttribute="top" secondItem="qfG-ia-yLy" secondAttribute="bottom" constant="20" id="05Q-1u-BgQ"/>
+                                            <constraint firstItem="ekG-7X-tUI" firstAttribute="centerX" secondItem="aJl-O1-dCf" secondAttribute="centerX" id="2Fs-cF-5j3"/>
                                             <constraint firstItem="6fZ-3w-mGq" firstAttribute="top" secondItem="Hwf-AM-i74" secondAttribute="bottom" constant="20" id="3Jf-dm-wt5"/>
                                             <constraint firstItem="EIv-fT-BJQ" firstAttribute="top" secondItem="DeX-ch-YKA" secondAttribute="bottom" constant="8" id="6zi-Nh-xw4"/>
                                             <constraint firstItem="DeX-ch-YKA" firstAttribute="top" secondItem="Hwf-AM-i74" secondAttribute="bottom" constant="20" id="B1e-uG-0NC"/>
@@ -955,15 +943,14 @@
                                             <constraint firstItem="Hwf-AM-i74" firstAttribute="top" secondItem="rDS-LT-7Uf" secondAttribute="bottom" constant="20" id="So5-cM-Rst"/>
                                             <constraint firstItem="EIv-fT-BJQ" firstAttribute="centerX" secondItem="aJl-O1-dCf" secondAttribute="centerX" id="Uy0-he-74G"/>
                                             <constraint firstItem="DeX-ch-YKA" firstAttribute="centerX" secondItem="aJl-O1-dCf" secondAttribute="centerX" constant="-29" id="XLw-WL-SeM"/>
-                                            <constraint firstAttribute="trailing" secondItem="ekG-7X-tUI" secondAttribute="trailing" constant="30" id="d6a-7z-xR5"/>
                                             <constraint firstItem="6fZ-3w-mGq" firstAttribute="leading" secondItem="DeX-ch-YKA" secondAttribute="trailing" constant="8" id="eAn-H8-kVW"/>
                                             <constraint firstItem="qfG-ia-yLy" firstAttribute="top" secondItem="use-jp-iRB" secondAttribute="bottom" constant="20" id="heV-YZ-lpy"/>
                                             <constraint firstItem="use-jp-iRB" firstAttribute="top" secondItem="EIv-fT-BJQ" secondAttribute="bottom" constant="8" id="iJr-Tc-mvj"/>
                                             <constraint firstItem="DfS-cc-lDE" firstAttribute="centerX" secondItem="aJl-O1-dCf" secondAttribute="centerX" id="kjI-Xx-2Xe"/>
+                                            <constraint firstAttribute="bottom" secondItem="SYU-Lr-FZW" secondAttribute="bottom" constant="20" id="pEx-U1-5lg"/>
                                             <constraint firstItem="rDS-LT-7Uf" firstAttribute="top" secondItem="DfS-cc-lDE" secondAttribute="bottom" constant="8" id="sAg-So-cka"/>
                                             <constraint firstItem="Hwf-AM-i74" firstAttribute="centerX" secondItem="aJl-O1-dCf" secondAttribute="centerX" id="t1d-zo-nGK"/>
                                             <constraint firstItem="SYU-Lr-FZW" firstAttribute="centerX" secondItem="aJl-O1-dCf" secondAttribute="centerX" id="uPh-gx-iNh"/>
-                                            <constraint firstItem="ekG-7X-tUI" firstAttribute="leading" secondItem="aJl-O1-dCf" secondAttribute="leading" constant="30" id="xKx-95-PrA"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1827,10 +1814,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="MoE-cc-Wfk" id="4Zs-WP-vTf"/>
                         <outlet property="descriptionTextField" destination="FT4-6o-w2E" id="DsL-2g-MRl"/>
                         <outlet property="durationLabel" destination="y1x-YW-dAV" id="Wg3-nF-56q"/>
                         <outlet property="durationStepper" destination="9Vh-sY-poy" id="kXL-AC-h0d"/>
                         <outlet property="nameTextField" destination="cZm-tj-e04" id="ESp-8S-J6d"/>
+                        <outlet property="titleLabel" destination="Bv1-Vp-hlc" id="9Zb-GI-bqM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJM-Qh-OK5" userLabel="First Responder" sceneMemberID="firstResponder"/>

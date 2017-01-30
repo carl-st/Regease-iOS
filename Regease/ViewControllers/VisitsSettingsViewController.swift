@@ -39,7 +39,7 @@ class VisitsSettingsViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            CalendarServices.sharedInstance.removeVisitType(visitTypeId: (self.viewModel?.visitTypes[indexPath.row].id)!, completion: {
+            CalendarServices.sharedInstance.deactivateVisitType(visitTypeId: (self.viewModel?.visitTypes[indexPath.row].id)!, completion: {
                 success, data in
                     if success {
                         let toDelete = self.viewModel?.visitTypes[indexPath.row]
@@ -68,5 +68,14 @@ class VisitsSettingsViewController: UIViewController, UITableViewDelegate, UITab
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: StoryboardNames.Main.rawValue, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: ViewControllerStoryboardIdentifier.NewVisitTypeViewController.rawValue) as! NewVisitTypeViewController
+        vc.modalPresentationStyle = .overCurrentContext
+        if let viewModel = viewModel {
+            vc.viewModel = NewVisitTypeViewModel(visitType: viewModel.visitTypes[indexPath.row])
+        }
+        self.tabBarController?.present(vc, animated: true, completion: nil)
+    }
 
 }

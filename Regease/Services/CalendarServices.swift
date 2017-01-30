@@ -61,6 +61,22 @@ class CalendarServices: Service {
             })
     }
     
+    func getVisitTypes(completion: @escaping (Bool, Any) -> Void) {
+        Alamofire.request(Urls.baseUrl + Path.VisitType.rawValue, method: .get, parameters: nil, headers: self.headers).validate()
+            .responseArray(completionHandler: {
+                (response: DataResponse<[VisitType]>) in
+                switch response.result {
+                case .success(let visiTypes):
+                    print(visiTypes)
+                    self.persistanceManager.createOrUpdate(visiTypes)
+                    completion(true, visiTypes)
+                case .failure(let error):
+                    print(error)
+                    completion(false, error)
+                }
+            })
+    }
+    
     func updateCalendar(calendar: CalendarSettings, completion: @escaping (Bool, Any) -> Void) {
         PersistenceManager.sharedInstance.realm.beginWrite()
         let parameters = Mapper().toJSON(calendar)
@@ -91,6 +107,12 @@ class CalendarServices: Service {
             .completion(completion: completion)
     }
     
+    func deactivateVisitType(visitTypeId: String, completion: @escaping (Bool, Any) -> Void) {
+        let parameters: Parameters = ["active": false]
+        Alamofire.request(Urls.baseUrl + Path.VisitType.rawValue  + "?id=\(visitTypeId)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate()
+            .completion(completion: completion)
+    }
+    
     func removeVisitType(visitTypeId: String, completion: @escaping (Bool, Any) -> Void) {
         let parameters: Parameters = ["id": visitTypeId]
         Alamofire.request(Urls.baseUrl + Path.VisitType.rawValue, method: .delete, parameters: parameters, encoding: URLEncoding.default, headers: self.headers).validate()
@@ -102,6 +124,22 @@ class CalendarServices: Service {
                                       "description": description,
                                       "duration": duration]
         Alamofire.request(Urls.baseUrl + Path.VisitType.rawValue, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate()
+            .responseObject(completionHandler: {
+                (response: DataResponse<VisitType>) in
+                switch response.result {
+                case .success(let visitType):
+                    print(visitType)
+                    self.persistanceManager.createOrUpdate(visitType)
+                    completion(true, visitType)
+                case .failure(let error):
+                    print(error)
+                    completion(false, error)
+                }
+            })
+    }
+    
+    func updateVisitType(visitTypeId: String, parameters: Parameters, completion: @escaping (Bool, Any) -> Void) {
+        Alamofire.request(Urls.baseUrl + Path.VisitType.rawValue + "?id=\(visitTypeId)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate()
             .responseObject(completionHandler: {
                 (response: DataResponse<VisitType>) in
                 switch response.result {

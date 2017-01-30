@@ -18,6 +18,10 @@ struct Urls {
     #endif
 }
 
+struct Secrets {
+    static var api = "J79OE25QKHC8"
+}
+
 struct Settings {
     static var WorkingHours = "WorkingHours"
     static var WorkingDays = "WorkingDays"
