@@ -137,4 +137,20 @@ class CalendarServices: Service {
                 }
             })
     }
+    
+    func updateVisitType(visitTypeId: String, parameters: Parameters, completion: @escaping (Bool, Any) -> Void) {
+        Alamofire.request(Urls.baseUrl + Path.VisitType.rawValue + "?id=\(visitTypeId)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers).validate()
+            .responseObject(completionHandler: {
+                (response: DataResponse<VisitType>) in
+                switch response.result {
+                case .success(let visitType):
+                    print(visitType)
+                    self.persistanceManager.createOrUpdate(visitType)
+                    completion(true, visitType)
+                case .failure(let error):
+                    print(error)
+                    completion(false, error)
+                }
+            })
+    }
 }

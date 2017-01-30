@@ -11,17 +11,17 @@ import UIKit
 @IBDesignable
 class Circle: UIView {
 
-        @IBInspectable var mainColor: UIColor = UIColor.blue
+        @IBInspectable var mainColor: UIColor = UIColor.lightGray
             {
-            didSet { print("mainColor was set here") }
+            didSet { }
         }
-        @IBInspectable var ringColor: UIColor = UIColor.orange
+        @IBInspectable var ringColor: UIColor = UIColor.blue
             {
-            didSet { print("bColor was set here") }
+            didSet { }
         }
         @IBInspectable var ringThickness: CGFloat = 4
             {
-            didSet { print("ringThickness was set here") }
+            didSet { }
         }
         
         @IBInspectable var isSelected: Bool = true

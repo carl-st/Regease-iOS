@@ -37,6 +37,7 @@
 		F9745F1F1DECCD4300F2F7A7 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F1E1DECCD4300F2F7A7 /* GlobalConstants.swift */; };
 		F9745F221DECD33C00F2F7A7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9745F211DECD33C00F2F7A7 /* SettingsTableViewController.swift */; };
 		F983A8331E2AB87200F96BCF /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F983A8321E2AB87200F96BCF /* Circle.swift */; };
+		F983A8351E2AF72500F96BCF /* NewVisitTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F983A8341E2AF72500F96BCF /* NewVisitTypeViewModel.swift */; };
 		F9B390381DEDCA4E000FE192 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B390281DEDCA4E000FE192 /* Roboto-Black.ttf */; };
 		F9B390391DEDCA4E000FE192 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B390281DEDCA4E000FE192 /* Roboto-Black.ttf */; };
 		F9B3903A1DEDCA4E000FE192 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B390281DEDCA4E000FE192 /* Roboto-Black.ttf */; };
@@ -172,6 +173,7 @@
 		F9745F1E1DECCD4300F2F7A7 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalConstants.swift; path = Other/GlobalConstants.swift; sourceTree = "<group>"; };
 		F9745F211DECD33C00F2F7A7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = ViewControllers/SettingsTableViewController.swift; sourceTree = "<group>"; };
 		F983A8321E2AB87200F96BCF /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Circle.swift; path = Other/Circle.swift; sourceTree = "<group>"; };
+		F983A8341E2AF72500F96BCF /* NewVisitTypeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewVisitTypeViewModel.swift; path = ViewModels/NewVisitTypeViewModel.swift; sourceTree = "<group>"; };
 		F9B390281DEDCA4E000FE192 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		F9B390291DEDCA4E000FE192 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		F9B3902A1DEDCA4E000FE192 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 				F9C2FE5E1E1589B300A460F8 /* VisitsSettingsViewModel.swift */,
 				F9EB53DA1E2296E50011BEF0 /* ApearanceSettingsViewModel.swift */,
 				F9C2FE601E15942800A460F8 /* CalendarSettingsViewModel.swift */,
+				F983A8341E2AF72500F96BCF /* NewVisitTypeViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -914,6 +917,7 @@
 				F9C2FE611E15942800A460F8 /* CalendarSettingsViewModel.swift in Sources */,
 				F9F3E8971DEF03800011F8F4 /* Regease+DataRequest.swift in Sources */,
 				F90F32061DF4AEAB00EC7B08 /* Regease+DateFormatter.swift in Sources */,
+				F983A8351E2AF72500F96BCF /* NewVisitTypeViewModel.swift in Sources */,
 				F9745F191DEC8AC900F2F7A7 /* PersistenceManager.swift in Sources */,
 				F9F3E8991DEF1E7F0011F8F4 /* Appointment.swift in Sources */,
 				F9F4EDAD1DECF39900117C3A /* CalendarServices.swift in Sources */,

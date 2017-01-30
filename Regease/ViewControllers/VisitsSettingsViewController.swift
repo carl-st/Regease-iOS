@@ -68,5 +68,14 @@ class VisitsSettingsViewController: UIViewController, UITableViewDelegate, UITab
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: StoryboardNames.Main.rawValue, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: ViewControllerStoryboardIdentifier.NewVisitTypeViewController.rawValue) as! NewVisitTypeViewController
+        vc.modalPresentationStyle = .overCurrentContext
+        if let viewModel = viewModel {
+            vc.viewModel = NewVisitTypeViewModel(visitType: viewModel.visitTypes[indexPath.row])
+        }
+        self.tabBarController?.present(vc, animated: true, completion: nil)
+    }
 
 }
